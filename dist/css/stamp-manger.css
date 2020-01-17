@@ -1,0 +1,59 @@
+@charset "utf-8";
+.cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 16px;
+}
+.cards dl {
+  width: calc(25% - 10px);
+  height: 122px;
+  border-radius: 4px;
+  padding-left: 34px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 14px rgba(120, 119, 212, 0.5);
+  margin: 0;
+  color: #ffffff;
+}
+.cards dl.success {
+  background: #77C450;
+}
+.cards dl.primary {
+  background: #4C84FF;
+}
+.cards dl.infos {
+  background: #7877D4;
+}
+.cards dl.warn {
+  background: #FE8358;
+}
+.cards dl dt {
+  margin-left: 16px;
+  margin-top: 34px;
+  font-size: 20px;
+  font-weight: normal;
+}
+.cards dl dt span {
+  display: inline-block;
+  vertical-align: middle;
+  width: 55px;
+  height: 55px;
+  margin-right: 18px;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 55px;
+}
+.cards dl dt span i {
+  font-size: 24px;
+}
+.cards dl dd {
+  font-size: 14px;
+  text-align: right;
+}
+
+/*# sourceMappingURL=stamp-manger.css.map */

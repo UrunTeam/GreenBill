@@ -1,0 +1,128 @@
+{
+  "id": "1617500",
+  "name": "Green_Bill",
+  "font_family": "iconfont",
+  "css_prefix_text": "el-icon-ali",
+  "description": "绿色票据",
+  "glyphs": [
+    {
+      "icon_id": "12873899",
+      "name": "路径 19",
+      "font_class": "lujing",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "12873901",
+      "name": "路径 30",
+      "font_class": "lujing1",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "12873902",
+      "name": "路径 502",
+      "font_class": "lujing2",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "12873903",
+      "name": "路径 506",
+      "font_class": "lujing3",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "12873904",
+      "name": "路径 18",
+      "font_class": "lujing4",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "12873905",
+      "name": "路径 509",
+      "font_class": "lujing5",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "12873906",
+      "name": "路径 508",
+      "font_class": "lujing6",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "12873907",
+      "name": "路径 503",
+      "font_class": "lujing7",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "12873909",
+      "name": "路径 501",
+      "font_class": "lujing8",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "12873912",
+      "name": "路径 507",
+      "font_class": "lujing9",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "12873914",
+      "name": "组 13",
+      "font_class": "zu",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "12873918",
+      "name": "组 15",
+      "font_class": "zu1",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "12873919",
+      "name": "组 5",
+      "font_class": "zu2",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "12873920",
+      "name": "组 19",
+      "font_class": "zu3",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "12873921",
+      "name": "组 16",
+      "font_class": "zu4",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "12873922",
+      "name": "路径 504",
+      "font_class": "lujing10",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "12873923",
+      "name": "组 349",
+      "font_class": "zu5",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    }
+  ]
+}

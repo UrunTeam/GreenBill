@@ -1,4 +1,44 @@
 @charset "utf-8";
-@import "./base/conn.less";
+@import "./variable.less";
 
+// 基本框架 start
+html,body {
+  width: 100%;
+  min-width: 1280px;
+  height: 100%;
+}
+
+.container-box {
+  width: 100%;
+  height: 100%;
+  background: #F0F4F9;
+
+  .header-box, .main-box {
+    width: 100%;
+  }
+  
+  .header-box {
+    height: 80px;
+    background: linear-gradient(to right , #1F67FB, #1EA0F6);
+  }
+  
+  .body-box {
+    display: flex;
+    width: 100%;
+    height: calc(~'100% - 80px');
+
+    .aside-box {
+      position: relative;
+      height: 100%;
+      background: @black-color;
+    }
+
+    .main-box {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      box-sizing: border-box;
+    }
+  }
+}
 

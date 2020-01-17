@@ -1,0 +1,1 @@
+{"version":3,"sources":["variable.less"],"names":[],"mappings":"AAAA,iBAAS","file":"variable.css","sourcesContent":["@charset \"utf-8\";\r\n@black-color: #001F46;\r\n@success-color: #77C450;\r\n@primary-color: #4C84FF;\r\n@warn-color: #FE8358;\r\n@infos-color:#7877D4;"]}

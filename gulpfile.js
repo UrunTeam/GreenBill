@@ -167,6 +167,17 @@ gulp.task('copy', function(){
     ])
     .pipe(gulp.dest('./dist/libs/icheck/skins'));
 
+
+    gulp.src([
+      './app/libs/elementui/**'
+    ])
+    .pipe(gulp.dest('./dist/libs/elementui'));
+
+    gulp.src([
+      './app/libs/iconfont/**'
+    ])
+    .pipe(gulp.dest('./dist/libs/iconfont'));
+
     //  gulp.src([
     //   './app/libs/datetimepicker/**'
     // ])

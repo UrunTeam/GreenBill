@@ -1,0 +1,58 @@
+
+@charset "utf-8";
+@import "../less/variable.less";
+
+// 卡片
+.cards {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  dl {
+    width: calc(~'25% - 10px');
+    height:122px;
+    border-radius: 4px;
+    padding-left: 34px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    box-shadow:0px 4px 14px rgba(120,119,212,0.5);
+    margin: 0;
+    color: #ffffff;
+    &.success {
+      background: @success-color;
+    }
+    &.primary {
+      background: @primary-color;
+    }
+    &.infos {
+      background: @infos-color;
+    }
+    &.warn {
+      background: @warn-color;
+    }
+    dt {
+      margin-left: 16px;
+      margin-top: 34px;
+      font-size: 20px;
+      font-weight: normal;
+      span {
+        display: inline-block;
+        vertical-align: middle;
+        width:55px;
+        height:55px;
+        margin-right: 18px;
+        background:rgba(0,0,0,0.08);
+        border-radius:50%;
+        text-align: center;
+        line-height: 55px;
+        i {
+          font-size: 24px;
+        }
+      }
+    }
+    dd {
+      font-size: 14px;
+      text-align: right;
+    }
+  }
+}
+
