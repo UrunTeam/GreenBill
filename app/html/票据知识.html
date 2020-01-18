@@ -1,0 +1,57 @@
+<%- include('../templates/head') %>
+
+<body>
+  <div class="container-box">
+    <%- include('../templates/header') %>
+    <div class="body-box">
+      <div class="main-box" id="js_main_box">
+        <div class="searchBox">
+          <input type="text" class="int" placeholder="请输入关键词~">
+          <a href="#" class="sBtn">搜索</a>
+        </div>
+        <div class="loreBox">
+          <div class="lore-tit">
+            <h6>知识分类</h6>
+          </div>
+          <div class="lore-list">
+            <ul class="loreUl">
+              <%for(var i = 0; i < 9; i ++){%>
+              <li>
+                <a href="#">
+                  <div class="lo-img">
+                    <img src="../images/lore-pic.png" alt="">
+                  </div>
+                  <p class="p1">绿色票据知识</p>
+                  <p class="p2">绿色票据常见问题在线解答</p>
+                  <p class="p3">100条知识</p>
+                </a>
+              </li>  
+              <%}%>
+            </ul>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <%- include('../templates/foot') %>
+</body>
+<script>
+  var js_main_box = new Vue({
+    el: '#js_main_box',
+    delimiters: ['${', '}'],
+    data() {
+      return {
+        radio1: '默认排序',
+
+        
+      }
+    },
+    methods: {
+    }
+
+  })
+
+</script>
+
+</html>
