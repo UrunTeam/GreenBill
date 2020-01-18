@@ -1,0 +1,107 @@
+// 票据资源库开始
+.blue{
+    color:rgba(31,112,251,1);
+}
+.blueRound{
+    display: inline-block;
+    vertical-align: middle;
+    width:6px;
+    height:6px;
+    background:rgba(31,112,251,1);
+    border-radius:50%;
+    margin-right: 6px;
+}
+.searchBox{
+    width: 656px;
+    margin: 0 auto;
+    margin-top: 14px;
+    font-size: 0;
+    .int{
+        display: inline-block;
+        vertical-align: middle;
+        width:584px;
+        height:44px;
+        background:rgba(255,255,255,1);
+        border-radius:4px 0px 0px 4px;
+        padding: 0 16px;
+        outline: none;
+        border: none;
+        font-size: 14px;
+    }
+    .sBtn{
+        display: inline-block;
+        vertical-align: middle;
+        width:72px;
+        height:44px;
+        line-height: 44px;
+        text-align: center;
+        background:rgba(31,112,251,1);
+        opacity:1;
+        border-radius:0px 4px 4px 0px;
+        font-size: 14px;
+        color: white;
+    }
+}
+.resourceBox{
+    width:1200px;
+    height:695px;
+    height: calc(~'100% - 160px');
+    margin: 0 auto;
+    margin-top: 30px;
+    background:rgba(255,255,255,1);
+    border-radius:4px;
+    .res-tit{
+        height: 60px;
+        line-height: 60px;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 16px 0 40px;
+        border-bottom: 1px solid #F0EFF2;
+        .tLeft{
+            color:rgba(154,162,181,1);
+        }
+    }
+    .res-list{
+        height: calc(~'100% - 60px');
+        overflow: auto;
+    }
+    .resUl{
+        li{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px 20px 40px;
+            border-bottom: 1px solid #F0EFF2;
+            .liLeft{
+                .p1{
+                    font-size:18px;
+                    font-weight:bold;
+                    color:rgba(78,86,102,1);
+                }
+                .p2{
+                    font-size: 14px;
+                    color:rgba(154,162,181,1);
+                }
+            }
+            .liRight{
+                span{
+                    margin-left: 20px;
+                    i{
+                        margin-right: 6px;
+                    }
+                }
+                .sp1{
+                    display: inline-block;
+                    vertical-align: middle;
+                    min-width: 80px;
+                }
+                .sp2{
+                    display: inline-block;
+                    vertical-align: middle;
+                    min-width: 120px;
+                }
+            }
+        }
+    }
+}
+// 票据资源库结束

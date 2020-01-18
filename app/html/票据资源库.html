@@ -1,0 +1,89 @@
+<%- include('../templates/head') %>
+
+<body>
+  <div class="container-box">
+    <%- include('../templates/header') %>
+    <div class="body-box">
+      <div class="main-box" id="js_main_box">
+        <div class="searchBox">
+          <input type="text" class="int" placeholder="请输入关键词~">
+          <a href="#" class="sBtn">搜索</a>
+        </div>
+        <div class="resourceBox">
+          <div class="res-tit">
+            <div class="tLeft"><i class="blueRound"></i>为您找到相关结果约<i class="blue">100,000,0</i>个， 搜索用时 (0.23秒)</div>
+            <div class="tRight">
+              <el-radio-group v-model="radio1" size="small">
+                <el-radio-button label="默认排序"></el-radio-button>
+                <el-radio-button label="按时间排序"></el-radio-button>
+              </el-radio-group>
+            </div>
+          </div>
+          <div class="res-list">
+            <ul class="resUl">
+              <li>
+                <div class="liLeft">
+                  <p class="p1">江西省赣江新区合作经营社</p>
+                  <p class="p2">主要从事农业种植，畜牧业养殖的上市公司。</p>
+                </div>
+                <div class="liRight">
+                  <span class="sp1">
+                    <i class="el-icon-view"></i>10234
+                  </span>
+                  <span class="sp2">
+                    <i class="el-icon-time"></i>01-18  14:50
+                  </span>
+                </div>
+              </li>
+              <%for(var i = 0; i < 15; i ++){%>
+              <li>
+                <div class="liLeft">
+                  <p class="p1">江西省赣江新区合作经营社</p>
+                  <p class="p2">主要从事农业种植，畜牧业养殖的上市公司。</p>
+                </div>
+                <div class="liRight">
+                  <span class="sp1">
+                    <i class="el-icon-view"></i>10
+                  </span>
+                  <span class="sp2">
+                    <i class="el-icon-time"></i>01-18  14:50
+                  </span>
+                </div>
+              </li>  
+              <%}%>
+              
+            </ul>
+          </div>
+          <!-- 分页start -->
+          <div class="page-box">
+            <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange"
+              :current-page="currentPage4" :page-sizes="[100, 200, 300, 400]" :page-size="100"
+              layout="total, sizes, prev, pager, next, jumper" :total="400">
+            </el-pagination>
+          </div>
+          <!-- 分页end -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <%- include('../templates/foot') %>
+</body>
+<script>
+  var js_main_box = new Vue({
+    el: '#js_main_box',
+    delimiters: ['${', '}'],
+    data() {
+      return {
+        radio1: '默认排序',
+
+        
+      }
+    },
+    methods: {
+    }
+
+  })
+
+</script>
+
+</html>
