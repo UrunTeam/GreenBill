@@ -1,0 +1,179 @@
+<%- include('../templates/head') %>
+
+<body>
+  <div class="container-box">
+    <%- include('../templates/header') %>
+    <div class="body-box">
+      <%- include('../templates/aside') %>
+      <div class="main-box" id="js_main_box">
+        <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+
+          <!-- 票据集名称start -->
+          <div class="table-list">
+            <div class="toolbar">
+              <h6>新增票据</h6>
+            </div>
+            
+            <div class="forms-box forms-box-center">
+              <!-- 步骤条start -->
+              <div class="step-box">
+                <el-steps :active="2" align-center>
+                  <el-step title="票据集创建"></el-step>
+                  <el-step title="票据信息导入"></el-step>
+                  <el-step title="导入完成"></el-step>
+                </el-steps>
+              </div>
+              <!-- 步骤条end -->
+
+              <div class="files-box" style="margin-left: 0;">
+                <div class="f-b-l">
+                  <i></i>
+                </div>
+                <div class="f-b-r">
+                  <span>本次票据导入数量</span>
+                  <p class="primary-text">100条</p>
+                </div>
+              </div>
+
+              <div class="files-box" style="margin-left: 0;">
+                <div class="f-b-l">
+                  <i></i>
+                </div>
+                <div class="f-b-r">
+                  <span>上传填好的客户信息表</span>
+                  <p class="primary-text">5条</p>
+                </div>
+              </div>
+
+              <div class="table-box">
+                <!-- 表格start -->
+                <el-table :data="tableData" style="width: 100%" @selection-change="handleSelectionChange"
+                  :cell-style="colStyle" :header-cell-style="colStyle">
+                  <!-- <el-table-column prop="sortNum" label="序号" width="64">
+                  </el-table-column> -->
+                  <el-table-column fixed prop="sortNum" label="序号" width="64">
+                  </el-table-column>
+                  <el-table-column prop="name" label="公司名称" min-width="320">
+                    <template slot-scope="scope">
+                      <a href="javascript:;">${scope.row.name}</a>
+                      <!-- <p>广州市委</p> -->
+                    </template>
+                  </el-table-column>
+                  <el-table-column prop="xyNumber" label="统一社会信用代码" width="150">
+                  </el-table-column>
+                  <el-table-column prop="profession" label="所属行业" width="150" >
+                  </el-table-column>
+                  <el-table-column prop="money" label="收入（万元）" width="150">
+                  </el-table-column>
+                  <el-table-column prop="percent" label="占比 " width="150">
+                  </el-table-column>
+                  <el-table-column fixed="right"  prop="tip" label="错误提示" width="120">
+                    <template slot-scope="scope">
+                      <span class="error-text">${scope.row.tip}</span>
+                    </template>
+                  </el-table-column>
+                </el-table> <!-- 表格end -->
+              </div>
+
+            </div>
+          </div><!-- 票据集名称end -->
+        </el-form>
+
+        <div class="submit-box">
+          <el-button size="medium">返回重新上传</el-button>
+          <el-button size="medium">导入失败编辑</el-button>
+          <el-button type="primary" size="medium" @click="submitForm" size="small">下一步</el-button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%- include('../templates/foot') %>
+</body>
+<script>
+  var js_main_box = new Vue({
+    el: '#js_main_box',
+    delimiters: ['${', '}'],
+    data() {
+      return {
+        tableData: [{
+          sortNum: '1',
+          name: '江西省赣江新区合作经营社',
+          profession: '农林牧渔业',
+          percent: '20%',
+          xyNumber: '44100000',
+          money: "10000",
+          tip: '公司名称缺失'
+        }, {
+          sortNum: '2',
+          name: '江西省赣江新区合作经营社',
+          profession: '农林牧渔业',
+          percent: '10%',
+          xyNumber: '44100000',
+          money: "10000",
+          tip: '公司名称缺失'
+        }, {
+          sortNum: '3',
+          name: '江西省赣江新区合作经营社',
+          profession: '农林牧渔业',
+          percent: '15%',
+          xyNumber: '44100000',
+          money: "10000",
+          tip: '公司名称缺失'
+        }, {
+          sortNum: '4',
+          name: '江西省赣江新区合作经营社',
+          profession: '农林牧渔业',
+          percent: '20%',
+          xyNumber: '44100000',
+          money: "10000",
+          tip: '公司名称缺失'
+        }, {
+          sortNum: '5',
+          name: '江西省赣江新区合作经营社',
+          profession: '农林牧渔业',
+          percent: '20%',
+          xyNumber: '44100000',
+          money: "10000",
+          tip: '公司名称缺失'
+        }, {
+          sortNum: '6',
+          name: '江西省赣江新区合作经营社',
+          profession: '农林牧渔业',
+          percent: '20%',
+          xyNumber: '44100000',
+          money: "10000",
+          tip: '公司名称缺失'
+        }, {
+          sortNum: '7',
+          name: '江西省赣江新区合作经营社',
+          profession: '农林牧渔业',
+          percent: '20%',
+          xyNumber: '44100000',
+          money: "10000",
+          tip: '公司名称缺失'
+        }, {
+          sortNum: '8',
+          name: '江西省赣江新区合作经营社',
+          profession: '农林牧渔业',
+          percent: '20%',
+          xyNumber: '44100000',
+          money: "10000",
+          tip: '公司名称缺失'
+        }],
+      }
+    },
+    methods: {
+      submitForm() {
+       
+      },
+
+    },
+    created() {
+
+    }
+
+  })
+
+</script>
+
+</html>

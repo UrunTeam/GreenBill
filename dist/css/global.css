@@ -115,8 +115,19 @@ body {
       -ms-flex: 1;
           flex: 1;
   overflow-y: auto;
-  padding: 16px;
+  padding: 20px;
   box-sizing: border-box;
+}
+.error-text {
+  color: #FE8358;
+}
+.primary-text {
+  font-size: 12px;
+  color: #4C84FF;
+}
+.secondary-text {
+  font-size: 12px;
+  color: #67859B;
 }
 .aside-box .label-row {
   display: block;
@@ -234,7 +245,8 @@ body {
   margin-bottom: 0;
 }
 .table-list .toolbar .el-radio-group,
-.table-list .toolbar .el-button {
+.table-list .toolbar .el-button,
+.table-list .toolbar .el-input {
   float: right;
 }
 .table-list .toolbar h6 {
@@ -270,6 +282,9 @@ body {
 .table-list .dot-status.warn {
   background-color: #FE8358;
 }
+.table-list table {
+  font-size: 14px;
+}
 .table-list table th {
   padding-top: 0;
   padding-bottom: 0;
@@ -299,6 +314,31 @@ body {
   height: 60px;
   padding: 0 24px;
   background: #ffffff;
+}
+.sub-toolbar {
+  padding: 8px 20px;
+  background: #ffffff;
+}
+.sub-toolbar .el-button {
+  float: right;
+  margin-top: 5px;
+  margin-left: 8px;
+}
+.sub-toolbar .el-form {
+  display: inline-block;
+  margin-bottom: 0;
+}
+.sub-toolbar .el-form .el-form-item {
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 0;
+  margin-right: 12px;
+}
+.sub-toolbar .el-form .el-form-item .el-input--small .el-input__inner {
+  width: 160px;
+}
+.el-form-item__label {
+  font-weight: normal;
 }
 
 /*# sourceMappingURL=global.css.map */

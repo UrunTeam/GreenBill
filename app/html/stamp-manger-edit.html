@@ -1,0 +1,208 @@
+<%- include('../templates/head') %>
+
+<body>
+  <div class="container-box">
+    <%- include('../templates/header') %>
+    <div class="body-box">
+      <%- include('../templates/aside') %>
+      <div class="main-box" id="js_main_box">
+        <div class="table-list">
+          <div class="toolbar" style="border-bottom:1px solid #EBEEF2">
+            <h6>票据申请列表</h6>
+            <el-button type="default" icon="" size="small" @click="resetForm('ruleForm')">重置</el-button>
+            <el-button type="primary" icon="" size="small" @click="searchFn">查询</el-button>
+            
+          </div>
+          <!-- 工具栏start -->
+          <div class="sub-toolbar">
+            <el-form :model="ruleForm" ref="ruleForm" label-width="100px">
+              <el-form-item label="公司名称:" prop="name">
+                <el-input v-model="ruleForm.name" size="small"></el-input>
+              </el-form-item>
+              <el-form-item label="社会信用代码:" prop="number">
+                <el-input v-model="ruleForm.number" size="small"></el-input>
+              </el-form-item>
+              <el-form-item label="所属行业:" prop="profession">
+                <el-select v-model="ruleForm.profession" placeholder="请选择所属行业" size="small">
+                  <!-- <el-option label="区域一" value="shanghai"></el-option>
+                  <el-option label="区域二" value="beijing"></el-option> -->
+                </el-select>
+              </el-form-item>
+            </el-form>
+          </div> <!-- 工具栏end -->
+
+          <!-- 表格start -->
+          <el-table :data="tableData" style="width: 100%" @selection-change="handleSelectionChange"
+            :cell-style="colStyle" :header-cell-style="colStyle">
+            <el-table-column type="selection" width="64">
+            </el-table-column>
+            <el-table-column prop="name" label="公司名称" min-width="320" fixed sortable>
+              <template slot-scope="scope">
+                <a href="javascript:;">${scope.row.name}</a>
+                <!-- <p>广州市委</p> -->
+              </template>
+            </el-table-column>
+            <el-table-column prop="xyNumber" label="统一社会信用代码" width="150">
+            </el-table-column>
+            <el-table-column prop="profession" label="所属行业" width="150" sortable>
+            </el-table-column>
+            <el-table-column prop="money" label="收入（万元）" width="150">
+            </el-table-column>
+            <el-table-column prop="percent" label="占比 " width="150">
+            </el-table-column>
+            <el-table-column fixed="right" label="操作" width="120">
+              <template slot-scope="scope">
+                <el-button @click.native.prevent="handleEdit(scope.$index, tableData)" type="text" size="small">
+                  编辑
+                </el-button>
+                <el-button @click.native.prevent="deleteRow(scope.$index, tableData)" type="text" size="small">
+                  删除
+                </el-button>
+              </template>
+            </el-table-column>
+          </el-table> <!-- 表格end -->
+
+          <!-- 分页start -->
+          <div class="page-box">
+            <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange"
+              :current-page="currentPage4" :page-sizes="[100, 200, 300, 400]" :page-size="100"
+              layout="total, sizes, prev, pager, next, jumper" :total="400">
+            </el-pagination>
+          </div>
+          <!-- 分页end -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <%- include('../templates/foot') %>
+</body>
+<script>
+  var js_main_box = new Vue({
+    el: '#js_main_box',
+    delimiters: ['${', '}'],
+    data() {
+      return {
+        ruleForm: {
+          name: '',
+          number: '',
+          profession: '',
+          profession1: '',
+          profession2: '',
+          delivery: false,
+          type: [],
+          resource: '',
+          desc: ''
+        },
+
+
+        tableData: [{
+          name: '江西省赣江新区合作经营社',
+          profession: '农林牧渔业',
+          percent: '20%',
+          xyNumber: '44100000',
+          money: "10000"
+        }, {
+          name: '江西省赣江新区合作经营社',
+          profession: '农林牧渔业',
+          percent: '10%',
+          xyNumber: '44100000',
+          money: "10000"
+        }, {
+          name: '江西省赣江新区合作经营社',
+          profession: '农林牧渔业',
+          percent: '15%',
+          xyNumber: '44100000',
+          money: "10000"
+        }, {
+          name: '江西省赣江新区合作经营社',
+          profession: '农林牧渔业',
+          percent: '20%',
+          xyNumber: '44100000',
+          money: "10000"
+        }, {
+          name: '江西省赣江新区合作经营社',
+          profession: '农林牧渔业',
+          percent: '20%',
+          xyNumber: '44100000',
+          money: "10000"
+        }, {
+          name: '江西省赣江新区合作经营社',
+          profession: '农林牧渔业',
+          percent: '20%',
+          xyNumber: '44100000',
+          money: "10000"
+        }, {
+          name: '江西省赣江新区合作经营社',
+          profession: '农林牧渔业',
+          percent: '20%',
+          xyNumber: '44100000',
+          money: "10000"
+        }, {
+          name: '江西省赣江新区合作经营社',
+          profession: '农林牧渔业',
+          percent: '20%',
+          xyNumber: '44100000',
+          money: "10000"
+        }],
+
+        currentPage4: 4
+      }
+    },
+    methods: {
+      // 编辑行
+      handleEdit(index, row) {
+        console.log(index, row);
+      },
+      //删除行
+      deleteRow(index, row) {
+        console.log(index, row);
+        this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).then(() => {
+          this.$message({
+            type: 'success',
+            message: '删除成功!'
+          });
+        }).catch(() => {
+          this.$message({
+            type: 'info',
+            message: '已取消删除'
+          });
+        });
+      },
+      colStyle({ row, column, rowIndex, columnIndex }) {
+        if (columnIndex == 0 || columnIndex == 2) {
+          return 'text-align:center'
+        }
+
+      },
+
+      // 全选
+      handleSelectionChange(val) {
+        this.multipleSelection = val;
+      },
+
+      handleSizeChange(val) {
+        console.log(`每页 ${val} 条`);
+      },
+      handleCurrentChange(val) {
+        console.log(`当前页: ${val}`);
+      },
+
+      searchFn() {
+
+      },
+
+      resetForm(formName) {
+        this.$refs[formName].resetFields();
+      }
+
+    }
+
+  })
+
+</script>
+
+</html>

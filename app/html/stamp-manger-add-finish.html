@@ -1,0 +1,66 @@
+<%- include('../templates/head') %>
+
+<body>
+  <div class="container-box">
+    <%- include('../templates/header') %>
+    <div class="body-box">
+      <%- include('../templates/aside') %>
+      <div class="main-box" id="js_main_box">
+        <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+
+          <!-- 票据集名称start -->
+          <div class="table-list">
+            <div class="toolbar">
+              <h6>新增票据</h6>
+            </div>
+            
+            <div class="forms-box forms-box-center">
+              <!-- 步骤条start -->
+              <div class="step-box">
+                <el-steps :active="3" align-center>
+                  <el-step title="票据集创建"></el-step>
+                  <el-step title="票据信息导入"></el-step>
+                  <el-step title="导入完成"></el-step>
+                </el-steps>
+              </div>
+              <!-- 步骤条end -->
+
+              <div class="finish-box">
+                <img src="../images/check_pic.png" alt="">
+                <p class="bold-txt">绿票信息导入完成，请等待审核</p>
+                <p class="smaller-txt">成功导入 100 条票据</p>
+                <el-button type="primary" size="medium" @click="submitForm" size="small">完成</el-button>
+              </div>
+
+            </div>
+          </div><!-- 票据集名称end -->
+        </el-form>
+      </div>
+    </div>
+  </div>
+  <%- include('../templates/foot') %>
+</body>
+<script>
+  var js_main_box = new Vue({
+    el: '#js_main_box',
+    delimiters: ['${', '}'],
+    data() {
+      return {
+       
+      }
+    },
+    methods: {
+      submitForm() {
+       
+      },
+
+    },
+    created() {
+
+    }
+
+  })
+
+</script>
+
+</html>
