@@ -1,0 +1,10 @@
+{
+  "title": "票据管理",
+  "path": "票据资源库",
+  "group": "pjzyk",
+  "styles": [
+    "../css/stamp-manger.css",
+    "../css/resource.css"
+  ],
+  "scripts":[]
+}

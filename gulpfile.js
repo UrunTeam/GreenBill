@@ -37,7 +37,7 @@ gulp.task('server', function() {
             startPath: "./html/index.html",
             open: "external"
         },function(){
-            gulp.watch(['dist/**','!dist/css/*.map','!dist/css/*.min.css']).on('change', reload);
+            //gulp.watch(['dist/**','!dist/css/*.map','!dist/css/*.min.css']).on('change', reload);
         });
     });
 });
