@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>票据管理 - ejs-demo</title>
+<meta name="renderer" content="webkit">
+
+<link rel="stylesheet" href="../css/custom-bootstrap.css">
+<link rel="stylesheet" href="../libs/elementui/index.css">
+<link rel="stylesheet" href="../libs/iconfont/iconfont.css">
+<link rel="stylesheet" href="../css/global.css">
+<link rel="stylesheet" href="../css/forms.css">
+
+
+<!--[if lt IE 9]>
+  <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+
+<body>
+  <div class="container-box">
+    <div class="header-box">
+  <span class="logo">绿色票据信息管理系统</span>
+  <ul class="ul-nav">
+    <!-- <li>
+      <i class=""></i>
+      <span>首页</span>
+    </li>
+    <li class="active">
+      <i class=""></i>
+      <span>票据管理</span>
+    </li>
+    <li>
+      <i class=""></i>
+      <span>监管报送</span>
+    </li>
+    <li>
+      <i class=""></i>
+      <span>票据资源库</span>
+    </li>
+    <li>
+      <i class=""></i>
+      <span>票据知识</span>
+    </li> -->
+
+    
+        
+    <li class="">
+      
+      <i class="el-icon-alilujing"></i>
+      <span>首页</span>
+    </li>
+        
+    <li class="active">
+      
+      <i class="el-icon-alilujing8"></i>
+      <span>票据管理</span>
+    </li>
+        
+    <li class="">
+      
+      <i class="el-icon-alilujing2"></i>
+      <span>监管报送</span>
+    </li>
+        
+    <li class="">
+      
+      <i class="el-icon-alilujing7"></i>
+      <span>票据资源库</span>
+    </li>
+        
+    <li class="">
+      
+      <i class="el-icon-alilujing10"></i>
+      <span>票据知识</span>
+    </li>
+    
+  </ul>
+  <div class="user-infos">
+    <span class="username">李晓晓，下午好！</span>
+    <i class="el-icon-alizu5"></i>
+    <i class="el-icon-alilujing4"></i>
+  </div>
+</div>
+    <div class="body-box">
+      <div class="aside-box" id="js_aside" v-cloak>
+  <el-menu default-active="stamp-manger" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" @select="menuSelected"
+    :collapse="isCollapse" background-color="#001F46" text-color="#fff">
+    <nav-menu :navmenus="leftMenus"></nav-menu>
+  </el-menu>
+</div>
+      <div class="main-box" id="js_main_box">
+        <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+
+          <!-- 票据集名称start -->
+          <div class="table-list">
+            <div class="toolbar">
+              <h6>新增票据</h6>
+            </div>
+            
+            <div class="forms-box forms-box-center">
+              <!-- 步骤条start -->
+              <div class="step-box">
+                <el-steps :active="3" align-center>
+                  <el-step title="票据集创建"></el-step>
+                  <el-step title="票据信息导入"></el-step>
+                  <el-step title="导入完成"></el-step>
+                </el-steps>
+              </div>
+              <!-- 步骤条end -->
+
+              <div class="finish-box">
+                <img src="../images/check_pic.png" alt="">
+                <p class="bold-txt">绿票信息导入完成，请等待审核</p>
+                <p class="smaller-txt">成功导入 100 条票据</p>
+                <el-button type="primary" size="medium" @click="submitForm" size="small">完成</el-button>
+              </div>
+
+            </div>
+          </div><!-- 票据集名称end -->
+        </el-form>
+      </div>
+    </div>
+  </div>
+  
+<script src="../libs/jquery/jquery.min.js"></script>
+<script src="../js/vue.js"></script>
+<script src="../libs/elementui/index.js"></script>
+<script src="../js/global.js"></script>
+
+
+</body>
+<script>
+  var js_main_box = new Vue({
+    el: '#js_main_box',
+    delimiters: ['${', '}'],
+    data() {
+      return {
+       
+      }
+    },
+    methods: {
+      submitForm() {
+       
+      },
+
+    },
+    created() {
+
+    }
+
+  })
+
+</script>
+
+</html>

@@ -27,17 +27,17 @@
 
         <div class="table-list">
           <div class="toolbar">
-            <h6>单位列表</h6>
+            <h6>票据申请列表</h6>
+            <el-button type="primary" icon="el-icon-circle-plus-outline" size="small" @click="handleOpen">添加</el-button>
+            <el-radio-group v-model="radio1" size="small">
+              <el-radio-button label="全部"></el-radio-button>
+              <el-radio-button label="待审核"></el-radio-button>
+              <el-radio-button label="进行中"></el-radio-button>
+              <el-radio-button label="完成"></el-radio-button>
+            </el-radio-group>
             <el-input placeholder="请输入关键词~" v-model="keyword" size="small">
               <i slot="suffix" class="el-input__icon el-icon-search"></i>
             </el-input>
-            <el-radio-group v-model="radio1" size="small">
-              <el-radio-button label="全部"></el-radio-button>
-              <el-radio-button label="即将到期"></el-radio-button>
-              <el-radio-button label="正常开启"></el-radio-button>
-              <el-radio-button label="到期关闭"></el-radio-button>
-            </el-radio-group>
-            <el-button type="primary" icon="el-icon-circle-plus-outline" size="small" @click="handleOpen">新建</el-button>
           </div>
 
           <!-- 表格start -->
@@ -70,7 +70,7 @@
                   编辑
                 </el-button>
                 <el-button @click.native.prevent="deleteRow(scope.$index, tableData)" type="text" size="small">
-                  移除
+                  删除
                 </el-button>
               </template>
             </el-table-column>
@@ -214,7 +214,7 @@
         // console.log(index)
         // window.open('create_unit_info.html');
         // location.href = "set_unit_info.html"
-        parent.window.vm_main_box.$data.iframeUrl = "set_unit_info.html?id=13"
+        // parent.window.vm_main_box.$data.iframeUrl = "set_unit_info.html?id=13"
 
       }
 

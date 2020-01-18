@@ -1,0 +1,208 @@
+<%- include('../templates/head') %>
+
+<body>
+  <div class="container-box">
+    <%- include('../templates/header') %>
+    <div class="body-box">
+      <%- include('../templates/aside') %>
+      <div class="main-box" id="js_main_box">
+        <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+
+          <!-- 系统信息start -->
+          <div class="table-list">
+            <div class="toolbar">
+              <h6>企业基本信息</h6>
+            </div>
+            <div class="forms-box">
+              <el-form-item label="企业名称" prop="name">
+                <el-input v-model="ruleForm.name" placeholder="请输入企业名称~" size="small"></el-input>
+              </el-form-item>
+
+              <el-form-item label="信用代码" prop="number">
+                <el-input v-model="ruleForm.number" placeholder="请输入社会信用代码~" size="small"></el-input>
+              </el-form-item>
+
+              <el-form-item label="主营业务" prop="work">
+                <el-select v-model="ruleForm.work" placeholder="请选择主营业务~" size="small">
+                  <!-- <el-option label="区域一" value="shanghai"></el-option>
+                  <el-option label="区域二" value="beijing"></el-option> -->
+                </el-select>
+              </el-form-item>
+
+              <el-form-item label="所属行业" prop="profession">
+                <el-select v-model="ruleForm.profession" placeholder="请选择所属行业~" size="small">
+                  <!-- <el-option label="区域一" value="shanghai"></el-option>
+                  <el-option label="区域二" value="beijing"></el-option> -->
+                </el-select>
+              </el-form-item>
+
+              <el-form-item label="法人代表" prop="representative">
+                <el-input v-model="ruleForm.representative" placeholder="请输入法人代表~" size="small"></el-input>
+              </el-form-item>
+
+              <el-form-item label="收入" prop="money">
+                <el-input v-model="ruleForm.money" placeholder="请输入金额~" size="small">
+                  <span class="money-text" slot="suffix">￥</span>
+                </el-input>
+              </el-form-item>
+
+              <el-form-item label="收入占比" prop="percent">
+                <el-input v-model="ruleForm.percent" placeholder="请输入~" size="small"></el-input>
+              </el-form-item>
+
+              <el-form-item label="部门/职位" prop="dev">
+                <el-input v-model="ruleForm.dev" placeholder="请输入部门/职位~" size="small"></el-input>
+              </el-form-item>
+              
+              <el-form-item label="联系人" prop="linkman">
+                <el-input v-model="ruleForm.linkman" placeholder="请输入~" size="small"></el-input>
+              </el-form-item>
+
+              <el-form-item label="联系电话" prop="phone">
+                <el-input v-model="ruleForm.phone" placeholder="请输入~" size="small"></el-input>
+              </el-form-item>
+
+              <el-form-item label="详细地址" prop="addr">
+                <el-input v-model="ruleForm.addr" placeholder="请输入~" size="small"></el-input>
+              </el-form-item>
+
+            </div>
+
+          </div><!-- 系统信息end -->
+
+          <!-- 绿色票据认定start -->
+          <div class="table-list">
+            <div class="toolbar">
+              <h6>绿色票据认定</h6>
+            </div>
+            <div class="forms-box">
+                
+
+            </div>
+          </div><!-- 绿色票据认定end -->
+         
+        </el-form>
+
+        <div class="submit-box">
+          <el-button size="medium" @click="resetForm('ruleForm')" size="small">重置</el-button>
+          <el-button type="primary" size="medium" @click="submitForm('ruleForm')" size="small">提交</el-button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%- include('../templates/foot') %>
+</body>
+<script>
+  var js_main_box = new Vue({
+    el: '#js_main_box',
+    delimiters: ['${', '}'],
+    data() {
+      return {
+        sysform: {
+          input1: '',
+          name: '',
+          projtime: {
+            options: [{
+              value: '选项1',
+              label: '第一期'
+            }],
+            value: ''
+          },
+          channel: {
+            options: [{
+              value: '选项1',
+              label: '渠道商'
+            }],
+            value: ''
+          },
+          money: '',
+          enddate: '',
+          sales: '',
+          percent: '',
+          link: '',
+          dev: '',
+          addr: ''
+        },
+
+        userform: {
+          unit: '',
+          phone: '',
+          linkman: '',
+          addr: '',
+          remark: ''
+        },
+
+        ruleForm: {
+          name: '',
+          number: '',
+          work: '',
+          profession: '',
+          money: '',
+          representative: '',
+          percent: '',
+          link: '',
+          phone: '',
+          linkman: '',
+          addr: '',
+        },
+        rules: {
+          name: [
+            { required: true, message: '请输入企业名称', trigger: 'blur' },
+            // { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
+          ],
+          number: [
+            { required: true, message: '请输入社会信用代码', trigger: 'blur' },
+            // { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
+          ],
+          profession: [
+            { required: true, message: '请选择所属行业', trigger: 'change' }
+          ],
+          work: [
+            { required: true, message: '请选择主营业务', trigger: 'change' }
+          ],
+          money: [
+            { required: true, message: '请输入金额', trigger: 'blur' }
+          ],
+          
+          unit: [
+            { required: true, message: '请输入客户单位名称', trigger: 'blur' },
+          ],
+          phone: [
+            { required: true, message: '请输入客户联系电话', trigger: 'blur' },
+          ],
+          linkman: [
+            { required: true, message: '请输入客户联系人', trigger: 'blur' },
+          ],
+        }
+      }
+    },
+    methods: {
+      submitForm(formName) {
+        console.log(formName)
+        this.$refs[formName].validate((valid) => {
+          if (valid) {
+            alert('submit!');
+            parent.window.vm_main_box.$data.iframeUrl = "unit_info_detail.html"
+          } else {
+            console.log('error submit!!');
+            return false;
+          }
+        });
+      },
+      resetForm(formName) {
+        this.$refs[formName].resetFields();
+      }
+
+    },
+    created() {
+      // console.log(location.href)
+      var path = decodeURI(location.pathname.split('/').slice(-1).toString()).replace(/.html/, '');
+      console.log(path + '.html')
+      // parent.window.vm_main_box.$data.iframeUrl = "unit_info.html" 
+    }
+
+  })
+
+</script>
+
+</html>

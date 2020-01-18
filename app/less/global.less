@@ -1,7 +1,19 @@
 @charset "utf-8";
+@import "./variable.less";
 @import "./base/base.less";
 @import "./layout.less";
 
+.error-text {
+  color: @warn-color;
+}
+.primary-text {
+  font-size: 12px;
+  color: @primary-color;
+}
+.secondary-text {
+  font-size: 12px;
+  color: #67859B;
+}
 
 // 侧边栏Start
 .aside-box {
@@ -121,7 +133,7 @@
         margin-bottom: 0;
       }
     }
-    .el-radio-group, .el-button{
+    .el-radio-group, .el-button, .el-input{
       float: right;
     }
     h6 {
@@ -162,6 +174,7 @@
     }
   }
   table {
+    font-size: 14px;
     th {
       padding-top: 0;
       padding-bottom: 0;
@@ -189,4 +202,36 @@
   height: 60px;
   padding: 0 24px;
   background: #ffffff;
+}
+
+// 工具栏2
+.sub-toolbar {
+  padding: 8px 20px;
+  background: #ffffff;
+  .el-button {
+    float: right;
+    margin-top: 5px;
+    margin-left: 8px;
+  }
+  .el-form {
+    display: inline-block;
+    margin-bottom: 0;
+    .el-form-item {
+      display: inline-block;
+      vertical-align: middle;
+      margin-bottom: 0;
+      margin-right: 12px;
+      .el-input--small {
+        .el-input__inner {
+          width: 160px;
+        }
+      }
+    }
+  }
+}
+
+
+// 修改element样式
+.el-form-item__label {
+  font-weight: normal;
 }
