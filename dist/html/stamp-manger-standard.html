@@ -11,6 +11,8 @@
 <link rel="stylesheet" href="../libs/elementui/index.css">
 <link rel="stylesheet" href="../libs/iconfont/iconfont.css">
 <link rel="stylesheet" href="../css/global.css">
+<link rel="stylesheet" href="../css/stamp-manger.css">
+
 
 <!--[if lt IE 9]>
   <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -86,7 +88,7 @@
 </div>
     <div class="body-box">
       <div class="aside-box" id="js_aside" v-cloak>
-  <el-menu default-active="stamp-manger" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" @select="menuSelected"
+  <el-menu default-active="stamp-manger-standard" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" @select="menuSelected"
     :collapse="isCollapse" background-color="#FFFFFF" text-color="#4E5666">
     <nav-menu :navmenus="leftMenus"></nav-menu>
   </el-menu>
@@ -94,10 +96,10 @@
       <div class="main-box" id="js_main_box">
         <div class="table-list">
           <div class="toolbar" style="border-bottom:1px solid #EBEEF2">
-            <h6>票据申请列表</h6>
+            <h6>票据审核列表</h6>
             <el-button type="default" icon="" size="small" @click="resetForm('ruleForm')">重置</el-button>
             <el-button type="primary" icon="" size="small" @click="searchFn">查询</el-button>
-            
+            <el-button type="primary" icon="" size="small" @click="handleOpen(1)">审核</el-button>
           </div>
           <!-- 工具栏start -->
           <div class="sub-toolbar">
@@ -105,13 +107,16 @@
               <el-form-item label="公司名称:" prop="name">
                 <el-input v-model="ruleForm.name" size="small"></el-input>
               </el-form-item>
-              <el-form-item label="社会信用代码:" prop="number">
-                <el-input v-model="ruleForm.number" size="small"></el-input>
-              </el-form-item>
               <el-form-item label="所属行业:" prop="profession">
                 <el-select v-model="ruleForm.profession" placeholder="请选择所属行业" size="small">
                   <!-- <el-option label="区域一" value="shanghai"></el-option>
                   <el-option label="区域二" value="beijing"></el-option> -->
+                </el-select>
+              </el-form-item>
+              <el-form-item label="绿色:" prop="isGreen">
+                <el-select v-model="ruleForm.isGreen" placeholder="" size="small">
+                  <el-option label="2 绿色园林开发任务" value="yes"></el-option>
+                  <el-option label="否" value="no"></el-option>
                 </el-select>
               </el-form-item>
             </el-form>
@@ -122,28 +127,30 @@
             :cell-style="colStyle" :header-cell-style="colStyle">
             <el-table-column type="selection" width="64">
             </el-table-column>
-            <el-table-column prop="name" label="公司名称" min-width="320" fixed sortable>
+            <el-table-column prop="name" label="所属行业门类" min-width="200" fixed>
               <template slot-scope="scope">
                 <a href="javascript:;">${scope.row.name}</a>
                 <!-- <p>广州市委</p> -->
               </template>
             </el-table-column>
-            <el-table-column prop="xyNumber" label="统一社会信用代码" width="150">
+            <el-table-column prop="bClass" label="大类" width="150">
             </el-table-column>
-            <el-table-column prop="profession" label="所属行业" width="150" sortable>
+            <el-table-column prop="mClass" label="中类" width="150">
             </el-table-column>
-            <el-table-column prop="money" label="收入（万元）" width="150">
+            <el-table-column prop="sClass" label="小类" width="150">
             </el-table-column>
-            <el-table-column prop="percent" label="占比 " width="150">
+            <el-table-column prop="norms" label="工艺规格 " width="100">
+            </el-table-column>
+            <el-table-column prop="isGreen" label="绿色贷款专项统计 " width="150">
             </el-table-column>
             <el-table-column fixed="right" label="操作" width="120">
               <template slot-scope="scope">
                 <el-button @click.native.prevent="handleEdit(scope.$index, tableData)" type="text" size="small">
-                  编辑
+                  详情
                 </el-button>
-                <el-button @click.native.prevent="deleteRow(scope.$index, tableData)" type="text" size="small">
+                <!-- <el-button @click.native.prevent="deleteRow(scope.$index, tableData)" type="text" size="small">
                   删除
-                </el-button>
+                </el-button> -->
               </template>
             </el-table-column>
           </el-table> <!-- 表格end -->
@@ -183,58 +190,75 @@
           delivery: false,
           type: [],
           resource: '',
-          desc: ''
+          desc: '',
+          isGreen: 'yes'
         },
 
 
         tableData: [{
-          name: '江西省赣江新区合作经营社',
-          profession: '农林牧渔业',
-          percent: '20%',
-          xyNumber: '44100000',
-          money: "10000"
+          name: 'A.农、林、牧、渔业',
+          mClass: 'A015.水果种植',
+          norms: '-',
+          bClass: 'A01.农业',
+          sClass: "A0151.仁果类和核果类水果种植",
+          isGreen: '2 绿色园林开发任务',
+          gist:['主营业务属于：生猪养殖、肉禽产业化、原料贸易','贸易背景属于：自营、自报关税、自理报检','交易标的属于：交易标的、交易标的、交易标的交易标的']
         }, {
-          name: '江西省赣江新区合作经营社',
-          profession: '农林牧渔业',
-          percent: '10%',
-          xyNumber: '44100000',
-          money: "10000"
+          name: 'A.农、林、牧、渔业',
+          mClass: 'A015.水果种植',
+          norms: '-',
+          bClass: 'A01.农业',
+          sClass: "A0151.仁果类和核果类水果种植",
+          isGreen: '2 绿色园林开发任务',
+          gist:['主营业务属于：生猪养殖、肉禽产业化、原料贸易','贸易背景属于：自营、自报关税、自理报检','交易标的属于：交易标的、交易标的、交易标的交易标的']
         }, {
-          name: '江西省赣江新区合作经营社',
-          profession: '农林牧渔业',
-          percent: '15%',
-          xyNumber: '44100000',
-          money: "10000"
+          name: 'A.农、林、牧、渔业',
+          mClass: 'A015.水果种植',
+          norms: '-',
+          bClass: 'A01.农业',
+          sClass: "A0151.仁果类和核果类水果种植",
+          isGreen: '2 绿色园林开发任务',
+          gist:['主营业务属于：生猪养殖、肉禽产业化、原料贸易','贸易背景属于：自营、自报关税、自理报检','交易标的属于：交易标的、交易标的、交易标的交易标的']
         }, {
-          name: '江西省赣江新区合作经营社',
-          profession: '农林牧渔业',
-          percent: '20%',
-          xyNumber: '44100000',
-          money: "10000"
+          name: 'A.农、林、牧、渔业',
+          mClass: 'A015.水果种植',
+          norms: '-',
+          bClass: 'A01.农业',
+          sClass: "A0151.仁果类和核果类水果种植",
+          isGreen: '2 绿色园林开发任务',
+          gist:['主营业务属于：生猪养殖、肉禽产业化、原料贸易','贸易背景属于：自营、自报关税、自理报检','交易标的属于：交易标的、交易标的、交易标的交易标的']
         }, {
-          name: '江西省赣江新区合作经营社',
-          profession: '农林牧渔业',
-          percent: '20%',
-          xyNumber: '44100000',
-          money: "10000"
+          name: 'A.农、林、牧、渔业',
+          mClass: 'A015.水果种植',
+          norms: '-',
+          bClass: 'A01.农业',
+          sClass: "A0151.仁果类和核果类水果种植",
+          isGreen: '2 绿色园林开发任务',
+          gist:['主营业务属于：生猪养殖、肉禽产业化、原料贸易','贸易背景属于：自营、自报关税、自理报检','交易标的属于：交易标的、交易标的、交易标的交易标的']
         }, {
-          name: '江西省赣江新区合作经营社',
-          profession: '农林牧渔业',
-          percent: '20%',
-          xyNumber: '44100000',
-          money: "10000"
+          name: 'A.农、林、牧、渔业',
+          mClass: 'A015.水果种植',
+          norms: '-',
+          bClass: 'A01.农业',
+          sClass: "A0151.仁果类和核果类水果种植",
+          isGreen: '2 绿色园林开发任务',
+          gist:['主营业务属于：生猪养殖、肉禽产业化、原料贸易','贸易背景属于：自营、自报关税、自理报检','交易标的属于：交易标的、交易标的、交易标的交易标的']
         }, {
-          name: '江西省赣江新区合作经营社',
-          profession: '农林牧渔业',
-          percent: '20%',
-          xyNumber: '44100000',
-          money: "10000"
+          name: 'A.农、林、牧、渔业',
+          mClass: 'A015.水果种植',
+          norms: '-',
+          bClass: 'A01.农业',
+          sClass: "A0151.仁果类和核果类水果种植",
+          isGreen: '2 绿色园林开发任务',
+          gist:['主营业务属于：生猪养殖、肉禽产业化、原料贸易','贸易背景属于：自营、自报关税、自理报检','交易标的属于：交易标的、交易标的、交易标的交易标的']
         }, {
-          name: '江西省赣江新区合作经营社',
-          profession: '农林牧渔业',
-          percent: '20%',
-          xyNumber: '44100000',
-          money: "10000"
+          name: 'A.农、林、牧、渔业',
+          mClass: 'A015.水果种植',
+          norms: '-',
+          bClass: 'A01.农业',
+          sClass: "A0151.仁果类和核果类水果种植",
+          isGreen: '2 绿色园林开发任务',
+          gist:['主营业务属于：生猪养殖、肉禽产业化、原料贸易','贸易背景属于：自营、自报关税、自理报检','交易标的属于：交易标的、交易标的、交易标的交易标的']
         }],
 
         currentPage4: 4
@@ -244,11 +268,12 @@
       // 编辑行
       handleEdit(index, row) {
         console.log(index, row);
+        location.href = "stamp-manger-forms2.html";
       },
       //删除行
       deleteRow(index, row) {
         console.log(index, row);
-        this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+        this.$confirm('此操作将永久删除该文件, 2 绿色园林开发任务否继续?', '提示', {
           confirmButtonText: '确定',
           cancelButtonText: '取消',
           type: 'warning'
@@ -289,6 +314,10 @@
 
       resetForm(formName) {
         this.$refs[formName].resetFields();
+      },
+
+      handleOpen(index) {
+        location.href = "stamp-manger-check.html";
       }
 
     }

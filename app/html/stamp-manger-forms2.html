@@ -1,25 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>票据管理 - ejs-demo</title>
-<meta name="renderer" content="webkit">
-
-<link rel="stylesheet" href="../css/custom-bootstrap.css">
-<link rel="stylesheet" href="../libs/elementui/index.css">
-<link rel="stylesheet" href="../libs/iconfont/iconfont.css">
-<link rel="stylesheet" href="../css/global.css">
-<link rel="stylesheet" href="../css/forms.css">
-
-
-<!--[if lt IE 9]>
-  <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-  <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-</head>
-
+<%- include('../templates/head') %>
 <style>
   .reset .el-form-item {
     margin-right: 30px;
@@ -47,76 +26,9 @@
 
 <body>
   <div class="container-box">
-    <div class="header-box">
-  <span class="logo">绿色票据信息管理系统</span>
-  <ul class="ul-nav">
-    <!-- <li>
-      <i class=""></i>
-      <span>首页</span>
-    </li>
-    <li class="active">
-      <i class=""></i>
-      <span>票据管理</span>
-    </li>
-    <li>
-      <i class=""></i>
-      <span>监管报送</span>
-    </li>
-    <li>
-      <i class=""></i>
-      <span>票据资源库</span>
-    </li>
-    <li>
-      <i class=""></i>
-      <span>票据知识</span>
-    </li> -->
-
-    
-        
-    <li class="">
-      
-      <i class="el-icon-alilujing"></i>
-      <span>首页</span>
-    </li>
-        
-    <li class="active">
-      
-      <i class="el-icon-alilujing8"></i>
-      <span>票据管理</span>
-    </li>
-        
-    <li class="">
-      
-      <i class="el-icon-alilujing2"></i>
-      <span>监管报送</span>
-    </li>
-        
-    <li class="">
-      
-      <i class="el-icon-alilujing7"></i>
-      <span>票据资源库</span>
-    </li>
-        
-    <li class="">
-      
-      <i class="el-icon-alilujing10"></i>
-      <span>票据知识</span>
-    </li>
-    
-  </ul>
-  <div class="user-infos">
-    <span class="username">李晓晓，下午好！</span>
-    <i class="el-icon-alizu5"></i>
-    <i class="el-icon-alilujing4"></i>
-  </div>
-</div>
+    <%- include('../templates/header') %>
     <div class="body-box">
-      <div class="aside-box" id="js_aside" v-cloak>
-  <el-menu default-active="stamp-manger" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" @select="menuSelected"
-    :collapse="isCollapse" background-color="#FFFFFF" text-color="#4E5666">
-    <nav-menu :navmenus="leftMenus"></nav-menu>
-  </el-menu>
-</div>
+      <%- include('../templates/aside') %>
       <div class="main-box" id="js_main_box">
         <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
 
@@ -258,13 +170,7 @@
       </div>
     </div>
   </div>
-  
-<script src="../libs/jquery/jquery.min.js"></script>
-<script src="../js/vue.js"></script>
-<script src="../libs/elementui/index.js"></script>
-<script src="../js/global.js"></script>
-
-
+  <%- include('../templates/foot') %>
 </body>
 <script>
   var js_main_box = new Vue({
@@ -327,11 +233,11 @@
     },
     methods: {
       submitForm(formName) {
+        location.href = "stamp-manger-check-list.html";
         console.log(formName)
         this.$refs[formName].validate((valid) => {
           if (valid) {
-            alert('submit!');
-            parent.window.vm_main_box.$data.iframeUrl = "unit_info_detail.html"
+           
           } else {
             console.log('error submit!!');
             return false;

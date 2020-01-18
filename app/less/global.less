@@ -54,14 +54,18 @@
 
   .el-menu{
     height: calc(~'100% - 71px');
-    border-right: solid 1px #253045;
+    border-right: solid 1px #ffffff;
   }
 }
-
-
-.el-submenu .el-menu-item {
+.el-menu-item {
+  border-left: 4px solid transparent;
+}
+.el-menu-item.is-active {
+  border-left: 4px solid rgba(31, 112, 251, 1);
+}
+.el-submenu .el-menu-item,.el-submenu__title {
   &:hover {
-    background: #002C64 !important;
+    background: rgba(31, 112, 251, 0.1) !important;
   }
 }
 

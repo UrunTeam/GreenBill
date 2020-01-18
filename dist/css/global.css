@@ -87,7 +87,7 @@ body {
 .container-box {
   width: 100%;
   height: 100%;
-  background: #F0F4F9;
+  background: #f3f3f3;
 }
 .container-box .header-box,
 .container-box .main-box {
@@ -108,7 +108,7 @@ body {
 .container-box .body-box .aside-box {
   position: relative;
   height: 100%;
-  background: #001F46;
+  background: #FFFFFF;
 }
 .container-box .body-box .main-box {
   -webkit-box-flex: 1;
@@ -165,10 +165,17 @@ body {
 }
 .aside-box .el-menu {
   height: calc(100% - 71px);
-  border-right: solid 1px #253045;
+  border-right: solid 1px #ffffff;
 }
-.el-submenu .el-menu-item:hover {
-  background: #002C64 !important;
+.el-menu-item {
+  border-left: 4px solid transparent;
+}
+.el-menu-item.is-active {
+  border-left: 4px solid #1f70fb;
+}
+.el-submenu .el-menu-item:hover,
+.el-submenu__title:hover {
+  background: rgba(31, 112, 251, 0.1) !important;
 }
 .header-box {
   overflow: hidden;

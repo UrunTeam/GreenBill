@@ -89,12 +89,12 @@
     <div class="body-box">
       <div class="aside-box" id="js_aside" v-cloak>
   <el-menu default-active="stamp-manger" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" @select="menuSelected"
-    :collapse="isCollapse" background-color="#001F46" text-color="#fff">
+    :collapse="isCollapse" background-color="#FFFFFF" text-color="#4E5666">
     <nav-menu :navmenus="leftMenus"></nav-menu>
   </el-menu>
 </div>
       <div class="main-box" id="js_main_box">
-        <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+        <el-form ref="ruleForm" label-width="100px" class="demo-ruleForm">
 
           <!-- 票据集名称start -->
           <div class="table-list">
@@ -117,7 +117,7 @@
                 <img src="../images/check_pic.png" alt="">
                 <p class="bold-txt">绿票信息导入完成，请等待审核</p>
                 <p class="smaller-txt">成功导入 100 条票据</p>
-                <el-button type="primary" size="medium" @click="submitForm" size="small">完成</el-button>
+                <el-button type="primary" size="medium" size="small" @click="handleOpen">完成</el-button>
               </div>
 
             </div>
@@ -144,8 +144,8 @@
       }
     },
     methods: {
-      submitForm() {
-       
+      handleOpen() {
+       location.href = "stamp-manger.html";
       },
 
     },

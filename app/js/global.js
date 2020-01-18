@@ -130,7 +130,7 @@ var vm_sidebar = new Vue({
               entity: {
                 id: 3,
                 parentMenuId: 1,
-                name: "index2",
+                name: "stamp-manger-check",
                 icon: null,
                 alias: "票据审核",
                 state: "ENABLE",
@@ -146,9 +146,25 @@ var vm_sidebar = new Vue({
               entity: {
                 id: 4,
                 parentMenuId: 1,
-                name: "index3",
+                name: "stamp-manger-recognition",
                 icon: null,
                 alias: "票据识别",
+                state: "ENABLE",
+                sort: 0,
+                value: "/system/auth",
+                type: "LINK",
+                discription: "用于权限管理的菜单",
+                createUserId: 1
+              },
+              childs: null
+            },
+            {
+              entity: {
+                id: 5,
+                parentMenuId: 1,
+                name: "stamp-manger-standard",
+                icon: null,
+                alias: "票据标准",
                 state: "ENABLE",
                 sort: 0,
                 value: "/system/auth",
@@ -162,7 +178,7 @@ var vm_sidebar = new Vue({
         },
         {
           entity: {
-            id: 5,
+            id: 6,
             parentMenuId: 0,
             name: "data_feedback",
             icon: null,

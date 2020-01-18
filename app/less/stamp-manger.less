@@ -56,3 +56,20 @@
   }
 }
 
+.dot-list {
+  li {
+    position: relative;
+    padding-left: 10px;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 8px;
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #77C450;
+    }
+  }
+}

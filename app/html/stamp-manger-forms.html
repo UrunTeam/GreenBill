@@ -1,4 +1,28 @@
 <%- include('../templates/head') %>
+<style>
+  .reset .el-form-item {
+    margin-right: 30px;
+  }
+
+  .reset .el-form-item__label {
+    white-space: nowrap;
+    font-weight: bold;
+    line-height: 22px;
+  }
+
+  .el-checkbox-group {
+    display: inline-block;
+  }
+
+  .upload-demo {
+    margin-bottom: 20px;
+  }
+
+  .borderBottom {
+    border-bottom: 1px solid #EBEEF2;
+    padding-top: 20px;
+  }
+</style>
 
 <body>
   <div class="container-box">
@@ -53,7 +77,7 @@
               <el-form-item label="部门/职位" prop="dev">
                 <el-input v-model="ruleForm.dev" placeholder="请输入部门/职位~" size="small"></el-input>
               </el-form-item>
-              
+
               <el-form-item label="联系人" prop="linkman">
                 <el-input v-model="ruleForm.linkman" placeholder="请输入~" size="small"></el-input>
               </el-form-item>
@@ -75,12 +99,68 @@
             <div class="toolbar">
               <h6>绿色票据认定</h6>
             </div>
-            <div class="forms-box">
-                
+            <div class="forms-box reset">
+
+              <div class="borderBottom">
+                <el-form-item label="主营业务属于" prop="select1" label-width="372px">
+                  <el-select v-model="ruleForm.select1" placeholder="请选择所属行业~" size="small">
+                    <!-- <el-option label="区域一" value="shanghai"></el-option>
+                    <el-option label="区域二" value="beijing"></el-option> -->
+                  </el-select>
+                </el-form-item>
+
+                <!-- <el-checkbox-group v-model="checkList">
+                  <el-checkbox label="2015年版"></el-checkbox>
+                  <el-checkbox label="2017年版"></el-checkbox>
+                  <el-checkbox label="2019年版"></el-checkbox>
+                </el-checkbox-group> -->
+
+                <el-upload class="upload-demo" style="width: 372px;"
+                  action="https://jsonplaceholder.typicode.com/posts/" :on-preview="handlePreview"
+                  :on-remove="handleRemove" :before-remove="beforeRemove" multiple :limit="3" :on-exceed="handleExceed"
+                  :file-list="fileList">
+                  <el-button size="small" type="primary">点击上传</el-button>
+                  <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+                </el-upload>
+              </div>
+
+              <div class="borderBottom">
+                <el-form-item label="银行承兑汇票签发、银行承兑汇票和商业承兑汇票贴现时的贸易背景直接属于" prop="select2" label-width="372px">
+                  <el-select v-model="ruleForm.select2" placeholder="请选择所属行业~" size="small">
+                    <!-- <el-option label="区域一" value="shanghai"></el-option>
+                    <el-option label="区域二" value="beijing"></el-option> -->
+                  </el-select>
+                </el-form-item>
+
+                <el-upload class="upload-demo" style="width: 372px;"
+                  action="https://jsonplaceholder.typicode.com/posts/" :on-preview="handlePreview"
+                  :on-remove="handleRemove" :before-remove="beforeRemove" multiple :limit="3" :on-exceed="handleExceed"
+                  :file-list="fileList">
+                  <el-button size="small" type="primary">点击上传</el-button>
+                  <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+                </el-upload>
+              </div>
+
+              <div class="borderBottom">
+                <el-form-item label="银行承兑汇票签发、银行承兑汇票和商业承兑汇票贴现时交易标的的用途属于" prop="select3" label-width="372px">
+                  <el-select v-model="ruleForm.select3" placeholder="请选择所属行业~" size="small">
+                    <el-option label="河湖治理及防洪设施工程建筑" value="shanghai"></el-option>
+                  </el-select>
+                </el-form-item>
+
+                <el-upload class="upload-demo" style="width: 372px;"
+                  action="https://jsonplaceholder.typicode.com/posts/" :on-preview="handlePreview"
+                  :on-remove="handleRemove" :before-remove="beforeRemove" multiple :limit="3" :on-exceed="handleExceed"
+                  :file-list="fileList">
+                  <el-button size="small" type="primary">点击上传</el-button>
+                  <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+                </el-upload>
+              </div>
+
 
             </div>
           </div><!-- 绿色票据认定end -->
-         
+
         </el-form>
 
         <div class="submit-box">
@@ -98,39 +178,9 @@
     delimiters: ['${', '}'],
     data() {
       return {
-        sysform: {
-          input1: '',
-          name: '',
-          projtime: {
-            options: [{
-              value: '选项1',
-              label: '第一期'
-            }],
-            value: ''
-          },
-          channel: {
-            options: [{
-              value: '选项1',
-              label: '渠道商'
-            }],
-            value: ''
-          },
-          money: '',
-          enddate: '',
-          sales: '',
-          percent: '',
-          link: '',
-          dev: '',
-          addr: ''
-        },
+        checkList: ['2019年版'],
 
-        userform: {
-          unit: '',
-          phone: '',
-          linkman: '',
-          addr: '',
-          remark: ''
-        },
+        fileList: [{ name: 'food.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100' }, { name: 'food2.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100' }],
 
         ruleForm: {
           name: '',
@@ -144,6 +194,11 @@
           phone: '',
           linkman: '',
           addr: '',
+
+          select1: '',
+          select2: '',
+          select3: ''
+
         },
         rules: {
           name: [
@@ -163,7 +218,7 @@
           money: [
             { required: true, message: '请输入金额', trigger: 'blur' }
           ],
-          
+
           unit: [
             { required: true, message: '请输入客户单位名称', trigger: 'blur' },
           ],
@@ -191,6 +246,18 @@
       },
       resetForm(formName) {
         this.$refs[formName].resetFields();
+      },
+      handleRemove(file, fileList) {
+        console.log(file, fileList);
+      },
+      handlePreview(file) {
+        console.log(file);
+      },
+      handleExceed(files, fileList) {
+        this.$message.warning(`当前限制选择 3 个文件，本次选择了 ${files.length} 个文件，共选择了 ${files.length + fileList.length} 个文件`);
+      },
+      beforeRemove(file, fileList) {
+        return this.$confirm(`确定移除 ${file.name}？`);
       }
 
     },

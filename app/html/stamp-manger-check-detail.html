@@ -1,4 +1,9 @@
 <%- include('../templates/head') %>
+<style>
+  .cards dl {
+    width: calc(33.3% - 10px);
+  }
+</style>
 
 <body>
   <div class="container-box">
@@ -8,34 +13,28 @@
       <div class="main-box" id="js_main_box">
         <div class="cards">
           <dl class="success">
-            <dt><span><i class="el-icon-alilujing5"></i></span>6项申请</dt>
+            <dt><span><i class="el-icon-alilujing5"></i></span>100项申请</dt>
             <dd>票据申请</dd>
           </dl>
           <dl class="warn">
-            <dt><span><i class="el-icon-alilujing3"></i></span>2项待审核</dt>
+            <dt><span><i class="el-icon-alilujing3"></i></span>50项待审核</dt>
             <dd>票据待审核</dd>
           </dl>
-          <dl class="infos">
-            <dt><span><i class="el-icon-alilujing6"></i></span>2项进行中</dt>
-            <dd>票据审核</dd>
-          </dl>
           <dl class="primary">
-            <dt><span><i class="el-icon-alilujing9"></i></span>2项完成</dt>
+            <dt><span><i class="el-icon-alilujing9"></i></span>50项完成</dt>
             <dd>完成审核</dd>
           </dl>
         </div>
 
         <div class="table-list">
           <div class="toolbar">
-            <h6>票据申请列表</h6>
-            <el-button type="primary" icon="el-icon-circle-plus-outline" size="small" @click="handleOpen">添加</el-button>
+            <h6>票据审核列表</h6>
             <el-radio-group v-model="radio1" size="small">
               <el-radio-button label="全部"></el-radio-button>
               <el-radio-button label="待审核"></el-radio-button>
-              <el-radio-button label="进行中"></el-radio-button>
               <el-radio-button label="完成"></el-radio-button>
             </el-radio-group>
-            <el-input placeholder="请输入关键词~" v-model="keyword" size="small">
+            <el-input placeholder="请输入金融机构名称~" v-model="keyword" size="small">
               <i slot="suffix" class="el-input__icon el-icon-search"></i>
             </el-input>
           </div>
@@ -43,31 +42,35 @@
           <!-- 表格start -->
           <el-table :data="tableData" style="width: 100%" max-height="600" @selection-change="handleSelectionChange"
             :cell-style="colStyle" :header-cell-style="colStyle">
-            <el-table-column type="selection" width="64">
-            </el-table-column>
-            <el-table-column fixed prop="projname" label="" min-width="320">
+            <!-- <el-table-column fixed prop="projname" label="系统名称" min-width="320">
               <template slot-scope="scope">
                 <a href="javascript:;">${scope.row.projname}</a>
-                <!-- <p>广州市委</p> -->
+                <p>广州市委</p>
+              </template>
+            </el-table-column> -->
+            <el-table-column prop="profession" label="状态">
+            </el-table-column>
+            <el-table-column prop="count" label="票据">
+              <template slot-scope="scope">
+                ${scope.row.count}项
               </template>
             </el-table-column>
-            <el-table-column prop="projtime" label="" width="150">
+            <el-table-column prop="manager" label="负责人">
             </el-table-column>
-            <el-table-column prop="manager" label="负责人" width="150">
-            </el-table-column>
-            <el-table-column prop="date" label="申请时间" width="150">
-            </el-table-column>
-            <el-table-column prop="status" label="状态" width="100">
+
+            <el-table-column prop="status" label="状态">
               <template slot-scope="scope">
                 <span class="dot-status"
                   :class="scope.row.status=='审核'?'warn':scope.row.status=='申请'?'success':''"></span>
                 ${scope.row.status}
               </template>
             </el-table-column>
+            <el-table-column prop="date" label="最新更新">
+            </el-table-column>
             <el-table-column fixed="right" label="操作" width="120">
               <template slot-scope="scope">
-                <el-button @click.native.prevent="handleEdit(scope.$index, tableData)" type="text" size="small">
-                  编辑
+                <el-button @click.native.prevent="handleOpen(scope.$index, tableData)" type="text" size="small">
+                  审核
                 </el-button>
                 <el-button @click.native.prevent="deleteRow(scope.$index, tableData)" type="text" size="small">
                   删除
@@ -100,52 +103,60 @@
         keyword: '',
 
         tableData: [{
-          projname: '绿色票据',
+          projname: '绿色票据1',
           date: '2016-05-03 14:03',
           status: '完成',
-          projtime: '江西分行',
+          count: '100',
+          profession: '江西分行',
           manager: "余初见"
         }, {
-          projname: '绿色票据',
+          projname: '绿色票据2',
           date: '2016-05-02 12:30',
           status: '申请',
-          projtime: '江西分行',
+          count: '100',
+          profession: '江西分行',
           manager: "余初见"
         }, {
-          projname: '绿色票据',
+          projname: '绿色票据3',
           date: '2016-05-04 16:00',
           status: '审核',
-          projtime: '江西分行',
+          count: '100',
+          profession: '江西分行',
           manager: "余初见"
         }, {
-          projname: '绿色票据',
+          projname: '绿色票据4',
           date: '2016-05-01 19:21',
           status: '完成',
-          projtime: '江西分行',
+          count: '100',
+          profession: '江西分行',
           manager: "余初见"
         }, {
-          projname: '绿色票据',
+          projname: '绿色票据5',
           date: '2016-05-08 18:00',
           status: '完成',
-          projtime: '江西分行',
+          count: '100',
+          profession: '江西分行',
           manager: "余初见"
         }, {
-          projname: '绿色票据',
+          projname: '绿色票据6',
           date: '2016-05-06 16:00',
           status: '完成',
-          projtime: '江西分行',
+          count: '100',
+          profession: '江西分行',
           manager: "余初见"
         }, {
-          projname: '绿色票据',
+          projname: '绿色票据7',
           date: '2016-05-07 15:20',
           status: '完成',
-          projtime: '江西分行',
+          count: '100',
+          profession: '江西分行',
           manager: "余初见"
         }, {
-          projname: '绿色票据',
+          projname: '绿色票据8',
           date: '2016-05-06 09:00',
           status: '完成',
-          projtime: '江西分行',
+          count: '100',
+          profession: '江西分行',
           manager: "余初见"
         }],
 
@@ -154,8 +165,9 @@
     },
     methods: {
       // 编辑行
-      handleEdit(index, row) {
+      handleOpen(index, row) {
         console.log(index, row);
+        location.href = "stamp-manger-check-list.html";
       },
       //删除行
       deleteRow(index, row) {
@@ -178,7 +190,7 @@
       },
       colStyle({ row, column, rowIndex, columnIndex }) {
         if (columnIndex == 0 || columnIndex == 2) {
-          return 'text-align:center'
+          return 'padding-left:67px;'
         }
 
       },
@@ -195,28 +207,7 @@
         console.log(`当前页: ${val}`);
       },
 
-      handleOpen() {
 
-        // var index = 0;
-        // parent.window.vm_main_box.$data.crumbs.find(element => {
-        //   if (element.link == 'set_unit_info.html') {
-        //     index = 1;
-        //   } else {
-        //     index = 0;
-        //   }
-        // });
-        // if (!index) {
-        //   parent.window.vm_main_box.$data.crumbs.push({
-        //     link: 'set_unit_info.html',
-        //     value: '创建单位信息'
-        //   })
-        // }
-        // console.log(index)
-        // window.open('create_unit_info.html');
-        // location.href = "set_unit_info.html"
-        // parent.window.vm_main_box.$data.iframeUrl = "set_unit_info.html?id=13"
-
-      }
 
     }
 

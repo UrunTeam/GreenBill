@@ -6,7 +6,7 @@
     <div class="body-box">
       <%- include('../templates/aside') %>
       <div class="main-box" id="js_main_box">
-        <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+        <el-form ref="ruleForm" label-width="100px" class="demo-ruleForm">
 
           <!-- 票据集名称start -->
           <div class="table-list">
@@ -29,7 +29,7 @@
                 <img src="../images/check_pic.png" alt="">
                 <p class="bold-txt">绿票信息导入完成，请等待审核</p>
                 <p class="smaller-txt">成功导入 100 条票据</p>
-                <el-button type="primary" size="medium" @click="submitForm" size="small">完成</el-button>
+                <el-button type="primary" size="medium" size="small" @click="handleOpen">完成</el-button>
               </div>
 
             </div>
@@ -50,8 +50,8 @@
       }
     },
     methods: {
-      submitForm() {
-       
+      handleOpen() {
+       location.href = "stamp-manger.html";
       },
 
     },

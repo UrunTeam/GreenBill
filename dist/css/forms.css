@@ -142,8 +142,8 @@
 }
 .el-form-item {
   display: inline-block;
-  width: 372px;
-  margin-right: 156px;
+  width: 270px;
+  margin-right: 40px;
 }
 .el-form-item label {
   display: block;
@@ -157,10 +157,20 @@
 .el-form-item .el-form-item__content .el-date-editor {
   width: 100%;
 }
+@media (max-width: 1650px) {
+  .el-form-item {
+    width: 226px;
+    margin-right: 20px;
+  }
+}
 .step-box {
   width: 1200px;
   margin: 30px auto 40px;
   background: #ffffff;
+}
+.el-upload input[type="file"] {
+  opacity: 0;
+  display: none;
 }
 .forms-box-center .files-box,
 .forms-box-center .el-form-item {
