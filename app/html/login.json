@@ -1,0 +1,9 @@
+{
+  "title": "登录页",
+  "path": "login",
+  "styles": [
+    "../css/animate.css",
+    "../css/login.css"
+  ],
+  "scripts":[]
+}

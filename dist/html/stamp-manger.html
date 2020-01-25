@@ -51,32 +51,42 @@
         
     <li class="">
       
+      <a href="javascript:;">
       <i class="el-icon-alilujing"></i>
-      <span>首页</span>
+        <span>首页</span>
+      </a>
     </li>
         
     <li class="active">
       
+      <a href="stamp-manger.html">
       <i class="el-icon-alilujing8"></i>
-      <span>票据管理</span>
+        <span>票据管理</span>
+      </a>
     </li>
         
     <li class="">
       
+      <a href="javascript:;">
       <i class="el-icon-alilujing2"></i>
-      <span>监管报送</span>
+        <span>监管报送</span>
+      </a>
     </li>
         
     <li class="">
       
+      <a href="票据资源库.html">
       <i class="el-icon-alilujing7"></i>
-      <span>票据资源库</span>
+        <span>票据资源库</span>
+      </a>
     </li>
         
     <li class="">
       
+      <a href="票据知识.html">
       <i class="el-icon-alilujing10"></i>
-      <span>票据知识</span>
+        <span>票据知识</span>
+      </a>
     </li>
     
   </ul>
@@ -250,6 +260,7 @@
       // 编辑行
       handleEdit(index, row) {
         console.log(index, row);
+        location.href = 'stamp-manger-edit.html';
       },
       //删除行
       deleteRow(index, row) {
@@ -290,6 +301,7 @@
       },
 
       handleOpen() {
+        location.href = "stamp-manger-add.html";
 
         // var index = 0;
         // parent.window.vm_main_box.$data.crumbs.find(element => {
@@ -307,7 +319,6 @@
         // }
         // console.log(index)
         // window.open('create_unit_info.html');
-        // location.href = "set_unit_info.html"
         // parent.window.vm_main_box.$data.iframeUrl = "set_unit_info.html?id=13"
 
       }

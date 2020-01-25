@@ -106,8 +106,8 @@
         console.log(formName)
         this.$refs[formName].validate((valid) => {
           if (valid) {
-            alert('submit!');
-            parent.window.vm_main_box.$data.iframeUrl = "unit_info_detail.html"
+            location.href = 'stamp-manger-add-import.html';
+            
           } else {
             console.log('error submit!!');
             return false;

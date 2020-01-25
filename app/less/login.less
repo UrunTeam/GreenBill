@@ -1,0 +1,334 @@
+body {
+  position: relative;
+  background: url(../images/login/bg.png) no-repeat 100% 100%;
+}
+
+.login-box {
+  position: absolute;
+  top: 70px;
+  right: 207px;
+  width: 680px;
+  padding:11px 0;
+  box-sizing: border-box;
+  text-align: right;
+  z-index: 2;
+  .logo-txt {
+    margin-bottom: 30px;
+    p {
+      font-size:48px;
+      font-weight:400;
+      line-height:76px;
+      color:rgba(255,255,255,1);
+      text-shadow:0px 2px 4px rgba(0,0,0,0.61);
+    }
+  
+    span {
+      font-size:29px;
+      font-weight:400;
+      line-height:45px;
+      color:rgba(255,255,255,1);
+      text-shadow:0px 2px 4px rgba(0,0,0,0.16);
+    }
+  }
+
+  .wrapper {
+    display: inline-block;
+    width: 354px;
+    padding: 30px 40px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: #ffffff;
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 40px;
+      margin-top: 10px;
+    }
+    .el-input {
+      margin-bottom: 20px;
+      &:nth-child(2) {
+        margin-bottom: 10px;
+      }
+    }
+    .el-button {
+      width: 100%;
+      margin-bottom: 60px;
+    }
+    .operate {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 30px;
+      a{
+        color: #9AA2B5;
+        &:hover{
+          color: #1F70FB;
+        }
+      }
+    }
+  }
+} 
+
+
+
+// 动画
+.animate-box {
+  position: absolute;
+  top: 172px;
+  left: 135px;
+  width: 676px;
+  height: 507px;
+  background: url("../images/login/under_pic.png") no-repeat left bottom;
+  background-size: 100%;
+  
+  >img {
+    width: 157px;
+    height: 151px;
+    position: absolute;
+    left: 229px;
+    bottom: 16px;
+  }
+
+}
+
+.group01, .group02, .group03 {
+  position: absolute;
+  >div {
+    position: absolute;
+  }
+  img {
+    position: absolute;
+  }
+}
+
+.group01 {
+  width: 213px;
+  height: 298px;
+  right: 73px;
+  top: 0;
+  animation: group01 .2s linear forwards;
+
+  >img {
+    width: 95px;
+    bottom: 0;
+    right: 0;
+  } 
+  .files01 {
+    width: 130px;
+    height: 133px;
+    top: -20px;
+    right: 56px;
+    img {
+      &:first-child {
+        width: 100px;
+        height: 100px;
+      }
+      &:nth-child(2) {
+        width: 96px;
+        right: 38px;
+        top: 0;
+      }
+    }
+  }
+
+  .files02 {
+    width: 138px;
+    height: 129px;
+    top: 52px;
+    right: 84px;
+    img {
+      &:first-child {
+        width: 80px;
+        z-index: 4;
+        right: 14px;
+        top: 22px;
+      }
+      &:nth-child(2) {
+        width: 120px;
+        right: 0;
+        top: 0;
+        z-index: 2;
+      }
+      &:nth-child(3) {
+        width: 110px;
+        top: 14px;
+        right: 18px;
+      }
+    }
+  }
+
+  .files03 {
+    width: 138px;
+    height: 129px;
+    bottom: 43px;
+    right: 60px;
+    img {
+      &:first-child {
+        width: 139px;
+        z-index: 2;
+        right: 0;
+        top: 0;
+      }
+      &:nth-child(2) {
+        width: 120px;
+        right: 16px;
+        top: 20px;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+.group02 {
+  width: 319px;
+  height: 317px;
+  right: 50px;
+  bottom: -18px;
+
+  >img {
+    width: 218px;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    animation: group02 2s ease-out 0.8s forwards;
+  }
+  .files04 {
+    width: 213px;
+    height: 196px;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    img {
+      &:first-child {
+        width: 100%;
+        top: 0;
+        left: 0;
+      }
+      &:nth-child(2) {
+        width: 200px;
+        top: 8px;
+        right: 20px;
+      }
+      &:nth-child(3) {
+        width: 40px;
+        right: 92px;
+        bottom: 23px;
+      }
+    }
+  }
+}
+
+.group03 {
+  width: 272px;
+  height: 248px;
+  left: 100px;
+  bottom: 112px;
+  opacity: 0;
+  animation: group03 2s ease-out 0.8s forwards;
+
+  >img {
+    &:first-child {
+      width: 82px;
+      height: 80px;
+      right: 0;
+      top: 0;
+    }
+    &:nth-child(2) {
+      width: 238px;
+      height: 179px;
+      bottom: 0;
+      left: 0;
+    }
+    &:nth-child(3) {
+      width: 30px;
+      left: 20px;
+      bottom: 90px;
+      opacity: 0;
+      animation: aniJump 1.5s linear 1s forwards;
+    }
+  }
+  
+}
+
+
+.files01, .files02, .files03, .files04 .group03 {
+  opacity: 0;
+}
+.files01 {
+  animation: aniOpa 0.2s linear 0.4s forwards;
+}
+.files02 {
+  animation: aniOpa 0.2s linear 0.45s forwards;
+}
+.files03 {
+  animation: aniOpa 0.2s linear 0.55s forwards;
+}
+.files04 {
+  animation: aniOpa 1s linear 0.6s forwards;
+}
+
+@keyframes group01 {
+  0% {
+    transform: translateX(140px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+// 透明度
+@keyframes aniOpa {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes aniJump {
+  0% {
+    opacity: 0;
+    transform: translate(80px,-20px) scale(0.5,0.5) rotate(-80deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0,0) scale(1,1) rotate(0deg);
+  }
+}
+
+@keyframes group02 {
+  0% {
+    opacity: 0;
+    transform: translate(100px,112px) scale3d(0.8, 0.8, 1);
+
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0,0) scale3d(1, 1, 1);
+  }
+}
+
+@keyframes group03 {
+  0% {
+    opacity: 0;
+    transform: translate(-50px,18px) scale3d(0.8, 0.8, 1);
+
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0,0) scale3d(1, 1, 1);
+  }
+}
+
+.login-box ,.animate-box {
+  zoom: 1.2;
+  
+}
+
+@media (max-width:1645px) {
+  .login-box ,.animate-box {
+    zoom: 1;
+  }
+}

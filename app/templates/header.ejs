@@ -27,35 +27,42 @@
         {
           name: '首页',
           icon: 'el-icon-alilujing',
-          active: ''
+          active: '',
+          link: null
         },
         {
           name: '票据管理',
           icon: 'el-icon-alilujing8',
-          active: 'stamp'
+          active: 'stamp',
+          link: 'stamp-manger.html'
         },
         {
           name: '监管报送',
           icon: 'el-icon-alilujing2',
-          active: ''
+          active: '',
+          link: null
         },
         {
           name: '票据资源库',
           icon: 'el-icon-alilujing7',
-          active: 'pjzyk'
+          active: 'pjzyk',
+          link: '票据资源库.html'
         },
         {
           name: '票据知识',
           icon: 'el-icon-alilujing10',
-          active: 'pjzs'
+          active: 'pjzs',
+          link: '票据知识.html'
         }
       ]
     %>
     <% for(var i=0;i < nav.length; i++){ %>    
     <li class="<%= local.group == nav[i].active ? 'active' : '' %>">
       <%= nav[i].group%>
+      <a href="<%= nav[i].link?nav[i].link:'javascript:;'%>">
       <i class="<%= nav[i].icon%>"></i>
-      <span><%= nav[i].name%></span>
+        <span><%= nav[i].name%></span>
+      </a>
     </li>
     <%}%>
   </ul>

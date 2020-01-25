@@ -51,32 +51,42 @@
         
     <li class="">
       
+      <a href="javascript:;">
       <i class="el-icon-alilujing"></i>
-      <span>首页</span>
+        <span>首页</span>
+      </a>
     </li>
         
     <li class="active">
       
+      <a href="stamp-manger.html">
       <i class="el-icon-alilujing8"></i>
-      <span>票据管理</span>
+        <span>票据管理</span>
+      </a>
     </li>
         
     <li class="">
       
+      <a href="javascript:;">
       <i class="el-icon-alilujing2"></i>
-      <span>监管报送</span>
+        <span>监管报送</span>
+      </a>
     </li>
         
     <li class="">
       
+      <a href="票据资源库.html">
       <i class="el-icon-alilujing7"></i>
-      <span>票据资源库</span>
+        <span>票据资源库</span>
+      </a>
     </li>
         
     <li class="">
       
+      <a href="票据知识.html">
       <i class="el-icon-alilujing10"></i>
-      <span>票据知识</span>
+        <span>票据知识</span>
+      </a>
     </li>
     
   </ul>
@@ -168,9 +178,9 @@
         </el-form>
 
         <div class="submit-box">
-          <el-button size="medium">返回重新上传</el-button>
+          <el-button size="medium" @click="submitForm('stamp-manger-add.html')">返回重新上传</el-button>
           <el-button size="medium">导入失败编辑</el-button>
-          <el-button type="primary" size="medium" @click="submitForm" size="small">下一步</el-button>
+          <el-button type="primary" size="medium" @click="submitForm('stamp-manger-add-finish.html')" size="small">下一步</el-button>
         </div>
       </div>
     </div>
@@ -257,8 +267,8 @@
       }
     },
     methods: {
-      submitForm() {
-       
+      submitForm(url) {
+       location.href= url;
       },
 
     },

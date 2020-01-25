@@ -80,9 +80,9 @@
         </el-form>
 
         <div class="submit-box">
-          <el-button size="medium">返回重新上传</el-button>
+          <el-button size="medium" @click="submitForm('stamp-manger-add.html')">返回重新上传</el-button>
           <el-button size="medium">导入失败编辑</el-button>
-          <el-button type="primary" size="medium" @click="submitForm" size="small">下一步</el-button>
+          <el-button type="primary" size="medium" @click="submitForm('stamp-manger-add-finish.html')" size="small">下一步</el-button>
         </div>
       </div>
     </div>
@@ -163,8 +163,8 @@
       }
     },
     methods: {
-      submitForm() {
-       
+      submitForm(url) {
+       location.href= url;
       },
 
     },

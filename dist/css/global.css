@@ -177,6 +177,9 @@ body {
 .el-submenu__title:hover {
   background: rgba(31, 112, 251, 0.1) !important;
 }
+.el-submenu.is-opened .el-submenu__title {
+  background: rgba(31, 112, 251, 0.2) !important;
+}
 .header-box {
   overflow: hidden;
 }

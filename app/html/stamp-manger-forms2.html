@@ -22,6 +22,9 @@
     border-bottom: 1px solid #EBEEF2;
     padding-top: 20px;
   }
+  .borderBottom:last-child {
+    border: none;
+  }
 </style>
 
 <body>
@@ -233,13 +236,15 @@
     },
     methods: {
       submitForm(formName) {
-        location.href = "stamp-manger-check-list.html";
-        console.log(formName)
+       
         this.$refs[formName].validate((valid) => {
           if (valid) {
-           
+            location.href = "stamp-manger-check-list.html";
+            console.log(formName)
           } else {
-            console.log('error submit!!');
+            this.$nextTick(function() {
+              $('html .main-box').animate({scrollTop: $('.is-error').eq(0).offset().top}, 200)
+            })
             return false;
           }
         });

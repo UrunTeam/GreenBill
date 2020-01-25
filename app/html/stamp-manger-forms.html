@@ -22,6 +22,9 @@
     border-bottom: 1px solid #EBEEF2;
     padding-top: 20px;
   }
+  .borderBottom:last-child {
+    border: none;
+  }
 </style>
 
 <body>
@@ -48,6 +51,7 @@
 
               <el-form-item label="主营业务" prop="work">
                 <el-select v-model="ruleForm.work" placeholder="请选择主营业务~" size="small">
+                  <el-option label="选项一" value="shanghai"></el-option>
                   <!-- <el-option label="区域一" value="shanghai"></el-option>
                   <el-option label="区域二" value="beijing"></el-option> -->
                 </el-select>
@@ -55,8 +59,7 @@
 
               <el-form-item label="所属行业" prop="profession">
                 <el-select v-model="ruleForm.profession" placeholder="请选择所属行业~" size="small">
-                  <!-- <el-option label="区域一" value="shanghai"></el-option>
-                  <el-option label="区域二" value="beijing"></el-option> -->
+                  <el-option label="选项一" value="shanghai"></el-option>
                 </el-select>
               </el-form-item>
 
@@ -104,9 +107,10 @@
               <div class="borderBottom">
                 <el-form-item label="主营业务属于" prop="select1" label-width="372px">
                   <el-select v-model="ruleForm.select1" placeholder="请选择所属行业~" size="small">
-                    <!-- <el-option label="区域一" value="shanghai"></el-option>
-                    <el-option label="区域二" value="beijing"></el-option> -->
+                    <!-- <el-option label="区域一" value="shanghai"></el-option> -->
+                    <!-- <el-option label="区域二" value="beijing"></el-option> -->
                   </el-select>
+
                 </el-form-item>
 
                 <!-- <el-checkbox-group v-model="checkList">
@@ -236,11 +240,11 @@
         console.log(formName)
         this.$refs[formName].validate((valid) => {
           if (valid) {
-            alert('submit!');
-            parent.window.vm_main_box.$data.iframeUrl = "unit_info_detail.html"
+            location.href = "stamp-manger.html";
           } else {
-            console.log('error submit!!');
-            return false;
+            this.$nextTick(function() {
+              $('html .main-box').animate({scrollTop: $('.is-error').eq(0).offset().top}, 200)
+            })
           }
         });
       },

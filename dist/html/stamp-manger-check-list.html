@@ -51,32 +51,42 @@
         
     <li class="">
       
+      <a href="javascript:;">
       <i class="el-icon-alilujing"></i>
-      <span>首页</span>
+        <span>首页</span>
+      </a>
     </li>
         
     <li class="active">
       
+      <a href="stamp-manger.html">
       <i class="el-icon-alilujing8"></i>
-      <span>票据管理</span>
+        <span>票据管理</span>
+      </a>
     </li>
         
     <li class="">
       
+      <a href="javascript:;">
       <i class="el-icon-alilujing2"></i>
-      <span>监管报送</span>
+        <span>监管报送</span>
+      </a>
     </li>
         
     <li class="">
       
+      <a href="票据资源库.html">
       <i class="el-icon-alilujing7"></i>
-      <span>票据资源库</span>
+        <span>票据资源库</span>
+      </a>
     </li>
         
     <li class="">
       
+      <a href="票据知识.html">
       <i class="el-icon-alilujing10"></i>
-      <span>票据知识</span>
+        <span>票据知识</span>
+      </a>
     </li>
     
   </ul>
@@ -164,14 +174,24 @@
             </el-table-column>
           </el-table> <!-- 表格end -->
 
-          <!-- 分页start -->
-          <div class="page-box">
-            <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange"
-              :current-page="currentPage4" :page-sizes="[100, 200, 300, 400]" :page-size="100"
-              layout="total, sizes, prev, pager, next, jumper" :total="400">
-            </el-pagination>
-          </div>
-          <!-- 分页end -->
+           <!-- 分页start -->
+ <div class="page-box" style="display: flex;justify-content: space-between;">
+  <el-dropdown>
+    <el-button size="small">
+      更多操作<i class="el-icon-arrow-down el-icon--right" ></i>
+    </el-button>
+    <el-dropdown-menu slot="dropdown" size="small">
+      <el-dropdown-item>批量启用</el-dropdown-item>
+      <el-dropdown-item>批量禁用</el-dropdown-item>
+      <el-dropdown-item>批量删除</el-dropdown-item>
+    </el-dropdown-menu>
+  </el-dropdown>
+  <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange"
+    :current-page="currentPage4" :page-sizes="[100, 200, 300, 400]" :page-size="100"
+    layout="total, sizes, prev, pager, next, jumper" :total="400">
+  </el-pagination>
+</div>
+<!-- 分页end -->
         </div>
       </div>
     </div>

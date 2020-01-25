@@ -62,14 +62,8 @@
             </el-table-column>
           </el-table> <!-- 表格end -->
 
-          <!-- 分页start -->
-          <div class="page-box">
-            <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange"
-              :current-page="currentPage4" :page-sizes="[100, 200, 300, 400]" :page-size="100"
-              layout="total, sizes, prev, pager, next, jumper" :total="400">
-            </el-pagination>
-          </div>
-          <!-- 分页end -->
+          <%- include('../templates/page-box') %>
+          
         </div>
       </div>
     </div>
@@ -152,6 +146,7 @@
       // 编辑行
       handleEdit(index, row) {
         console.log(index, row);
+        location.href = "stamp-manger-forms.html";
       },
       //删除行
       deleteRow(index, row) {

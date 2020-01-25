@@ -156,6 +156,7 @@
       // 编辑行
       handleEdit(index, row) {
         console.log(index, row);
+        location.href = 'stamp-manger-edit.html';
       },
       //删除行
       deleteRow(index, row) {
@@ -196,6 +197,7 @@
       },
 
       handleOpen() {
+        location.href = "stamp-manger-add.html";
 
         // var index = 0;
         // parent.window.vm_main_box.$data.crumbs.find(element => {
@@ -213,7 +215,6 @@
         // }
         // console.log(index)
         // window.open('create_unit_info.html');
-        // location.href = "set_unit_info.html"
         // parent.window.vm_main_box.$data.iframeUrl = "set_unit_info.html?id=13"
 
       }

@@ -1,0 +1,81 @@
+<%- include('../templates/head') %>
+
+<body>
+  
+  <div class="animate-box">
+    <div class="group01">
+      <div class="files01">
+        <img src="../images/login/group01_files01.png" alt="">
+        <img src="../images/login/group01_files02.png" alt="">
+      </div>
+      <div class="files02">
+        <img src="../images/login/group02_files01.png" alt="">
+        <img src="../images/login/group02_files02.png" alt="">
+        <img src="../images/login/group02_files03.png" alt="">
+      </div>
+      <div class="files03">
+        <img src="../images/login/group03_files01.png" alt="">
+        <img src="../images/login/group03_files02.png" alt="">
+      </div>
+      <img src="../images/login/people01_pic.png" alt="">
+    </div>
+    <div class="group02">
+      <div class="files04">
+        <img src="../images/login/group04_files01.png" alt="">
+        <img src="../images/login/group04_files02.png" alt="">
+        <img src="../images/login/pic01.png" alt="">
+      </div>
+      <img src="../images/login/people03_pic.png" alt="">
+    </div>
+    <div class="group03">
+      <img src="../images/login/files01_pic.png" alt="">
+      <img src="../images/login/people02_pic.png" alt="">
+      <img src="../images/login/pic02.png" alt="">
+    </div>
+    <img src="../images/login/card_pic.png" alt="">
+  </div>
+  
+  <div class="login-box" id="js_login">
+    <div class="logo-txt">
+      <p>绿色票据信息管理系统</p>
+      <span>Green Commecial Paper IT System</span>
+    </div>
+    <div class="wrapper">
+      <p class="title">用户登录 / USER LOGIN</p>
+      <div>
+        <el-input placeholder="请输入账号" v-model="username" clearable>
+          <i slot="prefix" class="el-input__icon el-icon-lock"></i>
+        </el-input>
+        <el-input placeholder="请输入密码" v-model="password" show-password>
+          <i slot="prefix" class="el-input__icon el-icon-key"></i>
+        </el-input>
+        <div class="operate">
+          <el-checkbox v-model="checked">自动登陆</el-checkbox>
+          <a href="JavaScript:;">忘记密码？</a>
+        </div>
+        <el-button type="primary" @click="handleOpen">登录</el-button>
+        <p style="text-align: center; color: #9AA2B5;">CopyRight© 云润大数据服务有限公司</p>
+      </div>
+    </div>
+  </div>
+  <%- include('../templates/foot') %>
+</body>
+<script>
+  new Vue({
+    el: '#js_login',
+    data() {
+      return {
+        username: '',
+        password: '',
+        checked: true
+      }
+    },
+    methods: {
+      handleOpen() {
+        location.href = "stamp-manger.html"
+      }
+    }
+  })
+</script>
+
+</html>

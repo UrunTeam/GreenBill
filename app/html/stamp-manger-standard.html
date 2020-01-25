@@ -10,27 +10,27 @@
           <div class="toolbar" style="border-bottom:1px solid #EBEEF2">
             <h6>票据审核列表</h6>
             <el-button type="default" icon="" size="small" @click="resetForm('ruleForm')">重置</el-button>
+            <el-button type="primary" icon="" size="small" @click="handleOpen(1)">新增</el-button>
             <el-button type="primary" icon="" size="small" @click="searchFn">查询</el-button>
-            <el-button type="primary" icon="" size="small" @click="handleOpen(1)">审核</el-button>
           </div>
           <!-- 工具栏start -->
           <div class="sub-toolbar">
             <el-form :model="ruleForm" ref="ruleForm" label-width="100px">
-              <el-form-item label="公司名称:" prop="name">
+              <!-- <el-form-item label="公司名称:" prop="name">
                 <el-input v-model="ruleForm.name" size="small"></el-input>
-              </el-form-item>
+              </el-form-item> -->
               <el-form-item label="所属行业:" prop="profession">
                 <el-select v-model="ruleForm.profession" placeholder="请选择所属行业" size="small">
                   <!-- <el-option label="区域一" value="shanghai"></el-option>
                   <el-option label="区域二" value="beijing"></el-option> -->
                 </el-select>
               </el-form-item>
-              <el-form-item label="绿色:" prop="isGreen">
+              <!-- <el-form-item label="绿色:" prop="isGreen">
                 <el-select v-model="ruleForm.isGreen" placeholder="" size="small">
-                  <el-option label="2 绿色园林开发任务" value="yes"></el-option>
+                  <el-option label="是" value="yes"></el-option>
                   <el-option label="否" value="no"></el-option>
                 </el-select>
-              </el-form-item>
+              </el-form-item> -->
             </el-form>
           </div> <!-- 工具栏end -->
 
@@ -58,11 +58,11 @@
             <el-table-column fixed="right" label="操作" width="120">
               <template slot-scope="scope">
                 <el-button @click.native.prevent="handleEdit(scope.$index, tableData)" type="text" size="small">
-                  详情
+                  编辑
                 </el-button>
-                <!-- <el-button @click.native.prevent="deleteRow(scope.$index, tableData)" type="text" size="small">
+                <el-button @click.native.prevent="deleteRow(scope.$index, tableData)" type="text" size="small">
                   删除
-                </el-button> -->
+                </el-button>
               </template>
             </el-table-column>
           </el-table> <!-- 表格end -->
@@ -174,12 +174,12 @@
       // 编辑行
       handleEdit(index, row) {
         console.log(index, row);
-        location.href = "stamp-manger-forms2.html";
+        // location.href = "stamp-manger-forms2.html";
       },
       //删除行
       deleteRow(index, row) {
         console.log(index, row);
-        this.$confirm('此操作将永久删除该文件, 2 绿色园林开发任务否继续?', '提示', {
+        this.$confirm('此操作将永久删除该文件,任务是否继续?', '提示', {
           confirmButtonText: '确定',
           cancelButtonText: '取消',
           type: 'warning'
@@ -223,7 +223,7 @@
       },
 
       handleOpen(index) {
-        location.href = "stamp-manger-check.html";
+        
       }
 
     }

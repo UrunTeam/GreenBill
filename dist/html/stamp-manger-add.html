@@ -51,32 +51,42 @@
         
     <li class="">
       
+      <a href="javascript:;">
       <i class="el-icon-alilujing"></i>
-      <span>首页</span>
+        <span>首页</span>
+      </a>
     </li>
         
     <li class="active">
       
+      <a href="stamp-manger.html">
       <i class="el-icon-alilujing8"></i>
-      <span>票据管理</span>
+        <span>票据管理</span>
+      </a>
     </li>
         
     <li class="">
       
+      <a href="javascript:;">
       <i class="el-icon-alilujing2"></i>
-      <span>监管报送</span>
+        <span>监管报送</span>
+      </a>
     </li>
         
     <li class="">
       
+      <a href="票据资源库.html">
       <i class="el-icon-alilujing7"></i>
-      <span>票据资源库</span>
+        <span>票据资源库</span>
+      </a>
     </li>
         
     <li class="">
       
+      <a href="票据知识.html">
       <i class="el-icon-alilujing10"></i>
-      <span>票据知识</span>
+        <span>票据知识</span>
+      </a>
     </li>
     
   </ul>
@@ -200,8 +210,8 @@
         console.log(formName)
         this.$refs[formName].validate((valid) => {
           if (valid) {
-            alert('submit!');
-            parent.window.vm_main_box.$data.iframeUrl = "unit_info_detail.html"
+            location.href = 'stamp-manger-add-import.html';
+            
           } else {
             console.log('error submit!!');
             return false;
