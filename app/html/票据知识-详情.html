@@ -1,0 +1,100 @@
+<%- include('../templates/head') %>
+
+<body>
+  <div class="container-box">
+    <%- include('../templates/header') %>
+    <div class="body-box">
+      <div class="main-box list-box" id="js_main_box">
+        <div class="listBox-wrap">
+          <div class="resourceBox detailBox">
+            <div class="res-tit">
+              <div class="tLeft">
+                <h6>
+                  <el-breadcrumb separator-class="el-icon-arrow-right">
+                    <el-breadcrumb-item :to="{ path: '/' }">知识库</el-breadcrumb-item>
+                    <el-breadcrumb-item :to="{ path: '/' }">产品知识</el-breadcrumb-item>
+                    <el-breadcrumb-item>产品详情</el-breadcrumb-item>
+                  </el-breadcrumb>
+                </h6>            
+              </div>
+            </div>
+            <div class="res-des">
+              <div class="desIn">
+                <p class="de-tit">绿色票据是什么？</p>
+                <p class="de-record">
+                  <span>
+                    <i class="el-icon-time"></i>01-18  14:50
+                  </span>
+                  <span>
+                    <i class="el-icon-view"></i>10234
+                  </span>
+                </p>
+                <div class="de-wen">
+                  <%for(var i = 0; i < 4; i ++){%>
+                  <p>
+                    所得资金专门用于资助符合规定条件绿色项目或为这些项目进行再融资的债券工具。相比于普通债券，绿色债券主要在四个方面具有特殊性：债券募集资金的用途、绿色项目的评估与选择程序、募集资金的跟踪管理以及要求出具相关年度报告等。
+                  </p>
+                  <%}%>
+                </div>
+              </div>
+              <div class="bot-help">
+                <div>以上信息是否对您有帮助？</div>
+                <div>
+                  <el-button class="el-button--small">没帮助</el-button>
+                  <el-button type="primary" class="el-button--small">有帮助</el-button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="questionBox">
+            <div class="que-tit">
+              <h6>热门知识</h6>
+            </div>
+            <div class="que-list">
+              <ul class="queUl">
+                <%for(var i = 0; i < 4; i ++){%>
+                <li>
+                  <p class="p1">
+                    <a href="#">绿色票据是什么？</a>
+                  </p>
+                  <p class="p2">
+                    <a href="#">绿色债券是指任何将所得资金专门用于资助符合主要从事农业种植，畜牧业养殖的上市公司绿色。</a>
+                  </p>
+                </li>  
+                <%}%>
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <%- include('../templates/foot') %>
+</body>
+<script>
+  var js_main_box = new Vue({
+    el: '#js_main_box',
+    delimiters: ['${', '}'],
+    data() {
+      return {
+        radio1: '默认排序',
+        currentPage4: 4
+        
+      }
+    },
+    methods: {
+      handleSizeChange(val) {
+        console.log(`每页 ${val} 条`);
+      },
+      handleCurrentChange(val) {
+        console.log(`当前页: ${val}`);
+      },
+    }
+
+  })
+
+</script>
+
+</html>

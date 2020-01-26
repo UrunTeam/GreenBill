@@ -1,7 +1,7 @@
 {
-  "title": "票据知识",
-  "path": "票据知识",
-  "group": "pjzs",
+  "title": "帮助",
+  "path": "",
+  "group": "bz",
   "styles": [
     "../css/stamp-manger.css",
     "../css/resource.css"

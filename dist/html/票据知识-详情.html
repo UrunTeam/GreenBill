@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>票据知识 - ejs-demo</title>
+<meta name="renderer" content="webkit">
+
+<link rel="stylesheet" href="../css/custom-bootstrap.css">
+<link rel="stylesheet" href="../libs/elementui/index.css">
+<link rel="stylesheet" href="../libs/iconfont/iconfont.css">
+<link rel="stylesheet" href="../css/global.css">
+<link rel="stylesheet" href="../css/stamp-manger.css">
+
+<link rel="stylesheet" href="../css/resource.css">
+
+
+<!--[if lt IE 9]>
+  <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+
+<body>
+  <div class="container-box">
+    <div class="header-box">
+  <span class="logo">绿色票据信息管理系统</span>
+  <ul class="ul-nav">
+    <!-- <li>
+      <i class=""></i>
+      <span>首页</span>
+    </li>
+    <li class="active">
+      <i class=""></i>
+      <span>票据管理</span>
+    </li>
+    <li>
+      <i class=""></i>
+      <span>监管报送</span>
+    </li>
+    <li>
+      <i class=""></i>
+      <span>票据资源库</span>
+    </li>
+    <li>
+      <i class=""></i>
+      <span>票据知识</span>
+    </li> -->
+
+    
+        
+    <li class="">
+      
+      <a href="javascript:;">
+      <i class="el-icon-alilujing"></i>
+        <span>首页</span>
+      </a>
+    </li>
+        
+    <li class="">
+      
+      <a href="stamp-manger.html">
+      <i class="el-icon-alilujing8"></i>
+        <span>票据管理</span>
+      </a>
+    </li>
+        
+    <li class="">
+      
+      <a href="javascript:;">
+      <i class="el-icon-alilujing2"></i>
+        <span>监管报送</span>
+      </a>
+    </li>
+        
+    <li class="">
+      
+      <a href="票据资源库.html">
+      <i class="el-icon-alilujing7"></i>
+        <span>票据资源库</span>
+      </a>
+    </li>
+        
+    <li class="active">
+      
+      <a href="票据知识.html">
+      <i class="el-icon-alilujing10"></i>
+        <span>票据知识</span>
+      </a>
+    </li>
+    
+  </ul>
+  <div class="user-infos">
+    <span class="username">李晓晓，下午好！</span>
+    <i class="el-icon-alizu5"></i>
+    <i class="el-icon-alilujing4"></i>
+  </div>
+</div>
+    <div class="body-box">
+      <div class="main-box list-box" id="js_main_box">
+        <div class="listBox-wrap">
+          <div class="resourceBox detailBox">
+            <div class="res-tit">
+              <div class="tLeft">
+                <h6>
+                  <el-breadcrumb separator-class="el-icon-arrow-right">
+                    <el-breadcrumb-item :to="{ path: '/' }">知识库</el-breadcrumb-item>
+                    <el-breadcrumb-item :to="{ path: '/' }">产品知识</el-breadcrumb-item>
+                    <el-breadcrumb-item>产品详情</el-breadcrumb-item>
+                  </el-breadcrumb>
+                </h6>            
+              </div>
+            </div>
+            <div class="res-des">
+              <div class="desIn">
+                <p class="de-tit">绿色票据是什么？</p>
+                <p class="de-record">
+                  <span>
+                    <i class="el-icon-time"></i>01-18  14:50
+                  </span>
+                  <span>
+                    <i class="el-icon-view"></i>10234
+                  </span>
+                </p>
+                <div class="de-wen">
+                  
+                  <p>
+                    所得资金专门用于资助符合规定条件绿色项目或为这些项目进行再融资的债券工具。相比于普通债券，绿色债券主要在四个方面具有特殊性：债券募集资金的用途、绿色项目的评估与选择程序、募集资金的跟踪管理以及要求出具相关年度报告等。
+                  </p>
+                  
+                  <p>
+                    所得资金专门用于资助符合规定条件绿色项目或为这些项目进行再融资的债券工具。相比于普通债券，绿色债券主要在四个方面具有特殊性：债券募集资金的用途、绿色项目的评估与选择程序、募集资金的跟踪管理以及要求出具相关年度报告等。
+                  </p>
+                  
+                  <p>
+                    所得资金专门用于资助符合规定条件绿色项目或为这些项目进行再融资的债券工具。相比于普通债券，绿色债券主要在四个方面具有特殊性：债券募集资金的用途、绿色项目的评估与选择程序、募集资金的跟踪管理以及要求出具相关年度报告等。
+                  </p>
+                  
+                  <p>
+                    所得资金专门用于资助符合规定条件绿色项目或为这些项目进行再融资的债券工具。相比于普通债券，绿色债券主要在四个方面具有特殊性：债券募集资金的用途、绿色项目的评估与选择程序、募集资金的跟踪管理以及要求出具相关年度报告等。
+                  </p>
+                  
+                </div>
+              </div>
+              <div class="bot-help">
+                <div>以上信息是否对您有帮助？</div>
+                <div>
+                  <el-button class="el-button--small">没帮助</el-button>
+                  <el-button type="primary" class="el-button--small">有帮助</el-button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="questionBox">
+            <div class="que-tit">
+              <h6>热门知识</h6>
+            </div>
+            <div class="que-list">
+              <ul class="queUl">
+                
+                <li>
+                  <p class="p1">
+                    <a href="#">绿色票据是什么？</a>
+                  </p>
+                  <p class="p2">
+                    <a href="#">绿色债券是指任何将所得资金专门用于资助符合主要从事农业种植，畜牧业养殖的上市公司绿色。</a>
+                  </p>
+                </li>  
+                
+                <li>
+                  <p class="p1">
+                    <a href="#">绿色票据是什么？</a>
+                  </p>
+                  <p class="p2">
+                    <a href="#">绿色债券是指任何将所得资金专门用于资助符合主要从事农业种植，畜牧业养殖的上市公司绿色。</a>
+                  </p>
+                </li>  
+                
+                <li>
+                  <p class="p1">
+                    <a href="#">绿色票据是什么？</a>
+                  </p>
+                  <p class="p2">
+                    <a href="#">绿色债券是指任何将所得资金专门用于资助符合主要从事农业种植，畜牧业养殖的上市公司绿色。</a>
+                  </p>
+                </li>  
+                
+                <li>
+                  <p class="p1">
+                    <a href="#">绿色票据是什么？</a>
+                  </p>
+                  <p class="p2">
+                    <a href="#">绿色债券是指任何将所得资金专门用于资助符合主要从事农业种植，畜牧业养殖的上市公司绿色。</a>
+                  </p>
+                </li>  
+                
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+<script src="../libs/jquery/jquery.min.js"></script>
+<script src="../js/vue.js"></script>
+<script src="../libs/elementui/index.js"></script>
+<script src="../js/global.js"></script>
+
+
+</body>
+<script>
+  var js_main_box = new Vue({
+    el: '#js_main_box',
+    delimiters: ['${', '}'],
+    data() {
+      return {
+        radio1: '默认排序',
+        currentPage4: 4
+        
+      }
+    },
+    methods: {
+      handleSizeChange(val) {
+        console.log(`每页 ${val} 条`);
+      },
+      handleCurrentChange(val) {
+        console.log(`当前页: ${val}`);
+      },
+    }
+
+  })
+
+</script>
+
+</html>
