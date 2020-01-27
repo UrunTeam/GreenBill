@@ -164,7 +164,7 @@
   }
 }
 .step-box {
-  width: 1200px;
+  width: 858px;
   margin: 30px auto 40px;
   background: #ffffff;
 }
@@ -187,8 +187,14 @@
 .forms-box-center .files-box .f-b-l {
   width: 64px;
   height: 100%;
-  background: #1f70fb;
-  opacity: 0.1;
+  text-align: center;
+  background: rgba(31, 112, 251, 0.1);
+}
+.forms-box-center .files-box .f-b-l i {
+  display: inline-block;
+  color: #BAC5D2;
+  font-size: 20px;
+  line-height: 66px;
 }
 .forms-box-center .files-box .f-b-r {
   padding: 12px 14px;

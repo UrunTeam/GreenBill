@@ -51,15 +51,13 @@
 
               <el-form-item label="主营业务" prop="work">
                 <el-select v-model="ruleForm.work" placeholder="请选择主营业务~" size="small">
-                  <!-- <el-option label="区域一" value="shanghai"></el-option>
-                  <el-option label="区域二" value="beijing"></el-option> -->
+                  <el-option label="选项一" value="shanghai"></el-option>
                 </el-select>
               </el-form-item>
 
               <el-form-item label="所属行业" prop="profession">
                 <el-select v-model="ruleForm.profession" placeholder="请选择所属行业~" size="small">
-                  <!-- <el-option label="区域一" value="shanghai"></el-option>
-                  <el-option label="区域二" value="beijing"></el-option> -->
+                  <el-option label="选项一" value="shanghai"></el-option>
                 </el-select>
               </el-form-item>
 
@@ -74,7 +72,9 @@
               </el-form-item>
 
               <el-form-item label="收入占比" prop="percent">
-                <el-input v-model="ruleForm.percent" placeholder="请输入~" size="small"></el-input>
+                <el-input v-model="ruleForm.percent" placeholder="请输入~" size="small">
+                  <span class="money-text" slot="suffix">%</span>
+                </el-input>
               </el-form-item>
 
               <el-form-item label="部门/职位" prop="dev">
@@ -225,12 +225,10 @@
           unit: [
             { required: true, message: '请输入客户单位名称', trigger: 'blur' },
           ],
-          phone: [
-            { required: true, message: '请输入客户联系电话', trigger: 'blur' },
-          ],
-          linkman: [
-            { required: true, message: '请输入客户联系人', trigger: 'blur' },
-          ],
+          percent: [
+            { required: true, message: '请输入收入占比', trigger: 'blur' },
+          ]
+          
         }
       }
     },

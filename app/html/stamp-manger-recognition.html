@@ -11,13 +11,16 @@
             <h6>票据审核列表</h6>
             <el-button type="default" icon="" size="small" @click="resetForm('ruleForm')">重置</el-button>
             <el-button type="primary" icon="" size="small" @click="searchFn">查询</el-button>
-            <el-button type="primary" icon="" size="small" @click="handleOpen(1)">审核</el-button>
+            <!-- <el-button type="primary" icon="" size="small" @click="handleOpen(1)">审核</el-button> -->
           </div>
           <!-- 工具栏start -->
           <div class="sub-toolbar">
             <el-form :model="ruleForm" ref="ruleForm" label-width="100px">
               <el-form-item label="公司名称:" prop="name">
                 <el-input v-model="ruleForm.name" size="small"></el-input>
+              </el-form-item>
+              <el-form-item label="信用代码:" prop="number">
+                <el-input v-model="ruleForm.number" size="small"></el-input>
               </el-form-item>
               <el-form-item label="所属行业:" prop="profession">
                 <el-select v-model="ruleForm.profession" placeholder="请选择所属行业" size="small">
@@ -76,14 +79,7 @@
             </el-table-column>
           </el-table> <!-- 表格end -->
 
-          <!-- 分页start -->
-          <div class="page-box">
-            <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange"
-              :current-page="currentPage4" :page-sizes="[100, 200, 300, 400]" :page-size="100"
-              layout="total, sizes, prev, pager, next, jumper" :total="400">
-            </el-pagination>
-          </div>
-          <!-- 分页end -->
+          <%- include('../templates/page-box') %>
         </div>
       </div>
     </div>

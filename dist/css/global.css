@@ -226,6 +226,9 @@ body {
 .header-box .user-infos i {
   margin-right: 20px;
 }
+.header-box .user-infos .el-icon-alilujing4 {
+  cursor: pointer;
+}
 .table-list {
   margin-top: 20px;
 }

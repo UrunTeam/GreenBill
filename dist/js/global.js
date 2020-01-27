@@ -41,7 +41,23 @@ commonJs.fn = {
 };
 
 
+var $header = document.getElementById('js_header');
 var $aside = document.getElementById('js_aside');
+
+if($header) {
+  var vm_header = new Vue({
+    el: '#js_header',
+    data() {
+      return {}
+    },
+    methods:{
+      handleOpen() {
+        location.href = "login.html";
+      }
+    }
+  })
+}
+
 if ($aside) {
   var navMenu = Vue.extend({
     template: `<div class="navMenu">
